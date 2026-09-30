@@ -5,10 +5,10 @@ export const SITE = {
   matriculas: ['M.N. 40564', 'M.P. 94321'],
   whatsappDisplay: '+54 9 11 2254-0922',
   whatsappNumber: '5491122540922',
-  whatsappMessage: 'Hola Silvina, quería hacerte una consulta.',
 };
 
-export const WHATSAPP_URL = `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(SITE.whatsappMessage)}`;
+// Abre el chat sin mensaje precargado: la persona escribe libremente.
+export const WHATSAPP_URL = `https://wa.me/${SITE.whatsappNumber}`;
 
 export const NAV = [
   { href: '/', label: 'Inicio' },
