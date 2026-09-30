@@ -1,0 +1,31 @@
+---
+import { SITE, NAV, CONTACT_LINK } from '../data/site';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div>
+        <p class="site-footer__name">{SITE.name}</p>
+        <p class="site-footer__tagline">{SITE.tagline}</p>
+        <p class="site-footer__tagline">Lic. en Psicología · {SITE.matricula}</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Pie de página">
+        <ul>
+          {[...NAV, CONTACT_LINK].map((item) => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© <span data-year>{year}</span> {SITE.name}</p>
+      <p>Atención online y presencial</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mantiene el año del copyright al día aunque el sitio no se vuelva a generar.
+  document.querySelectorAll('[data-year]').forEach((el) => (el.textContent = String(new Date().getFullYear())));
+</script>

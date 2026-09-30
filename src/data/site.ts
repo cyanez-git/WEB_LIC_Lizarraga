@@ -1,0 +1,21 @@
+export const SITE = {
+  name: 'Silvina Lizarraga',
+  tagline: 'Psicóloga · Sexóloga Clínica · Terapeuta de Pareja',
+  url: 'https://sexualidad-activa.com',
+  matricula: 'M.N. 40564',
+  whatsappDisplay: '+54 9 11 2254-0922',
+  whatsappNumber: '5491122540922',
+  whatsappMessage: 'Hola Silvina, quería hacerte una consulta.',
+};
+
+export const WHATSAPP_URL = `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(SITE.whatsappMessage)}`;
+
+export const NAV = [
+  { href: '/', label: 'Inicio' },
+  { href: '/psicoterapia-individual/', label: 'Psicoterapia individual' },
+  { href: '/terapia-de-pareja/', label: 'Terapia de pareja' },
+  { href: '/sexologia-clinica/', label: 'Sexología clínica' },
+  { href: '/sobre-mi/', label: 'Sobre mí' },
+];
+
+export const CONTACT_LINK = { href: '/contacto/', label: 'Contacto' };

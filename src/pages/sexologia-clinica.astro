@@ -1,0 +1,106 @@
+---
+import Base from '../layouts/Base.astro';
+import ServiceCta from '../components/ServiceCta.astro';
+
+// Fase 2: cada motivo tendrá su propia página. Cuando exista, agregar `href`
+// y el ítem se mostrará como enlace.
+const motivos: { label: string; href?: string }[] = [
+  { label: 'Deseo sexual' },
+  { label: 'Dificultades de erección' },
+  { label: 'Eyaculación rápida' },
+  { label: 'Eyaculación retardada' },
+  { label: 'Dificultades relacionadas con el orgasmo' },
+  { label: 'Dolor y dificultades en la penetración' },
+];
+---
+<Base
+  title="Sexología clínica y terapia sexual · Silvina Lizarraga"
+  description="Terapia sexual para dificultades con el deseo, la erección, la eyaculación, el orgasmo o el dolor en la penetración. Un tratamiento a medida, en un espacio de respeto y privacidad."
+>
+  <section class="page-hero">
+    <div class="container">
+      <h1><span class="eyebrow">Sexología clínica</span>Cuando algo en nuestra sexualidad empieza a preocuparnos</h1>
+      <div class="reading text-flow">
+        <p class="lead">Una dificultad sexual muchas veces se vive como si hubiera una parte de nosotros que dejó de funcionar como debería.</p>
+        <p>Aparecen expectativas, comparaciones, frustración, vergüenza, miedo a que vuelva a suceder y una atención cada vez mayor puesta en aquello que “tendría que pasar”.</p>
+        <p class="destacado">Pero una persona es mucho más que una respuesta sexual que no está funcionando como esperaba.</p>
+        <p>Por eso, cuando alguien llega diciendo “tengo un problema sexual”, para mí el trabajo no comienza solamente preguntando qué ocurre durante una relación sexual.</p>
+        <p>Necesito conocer a la persona que está viviendo esa dificultad.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><hr class="page-divider" /></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="split">
+        <div class="split__aside"><h2>¿Qué es la terapia sexual?</h2></div>
+        <div class="reading text-flow">
+          <p>La terapia sexual es una forma de psicoterapia focalizada y generalmente breve, orientada específicamente a las dificultades relacionadas con la sexualidad.</p>
+          <p>Trabajamos sobre el motivo que llevó a consultar, pero también sobre aquellos factores que pueden estar originándolo, manteniéndolo o intensificándolo.</p>
+          <p>No existe una única explicación para una dificultad sexual. Pueden intervenir factores médicos, hormonales, neurológicos, farmacológicos, psicológicos, emocionales, sexuales o vinculares, y muchas veces participan varios al mismo tiempo.</p>
+          <p>Por eso para mí es importante <strong>no psicologizar aquello que puede tener un componente biológico, pero tampoco medicalizar automáticamente aquello que puede ser emocional o vincular.</strong></p>
+          <p>Cuando algún aspecto necesita ser evaluado fuera de mi área profesional, realizo la derivación correspondiente y, cuando es necesario, trabajo de manera interdisciplinaria con otros profesionales.</p>
+          <p class="destacado">Investigar y derivar cuando corresponde también forma parte de una práctica clínica responsable.</p>
+        </div>
+      </div>
+      <div class="split">
+        <div class="split__aside"><h2>Hablar de sexualidad no siempre es fácil</h2></div>
+        <div class="reading text-flow">
+          <p>Consultar por algo que nos sucede en nuestra sexualidad puede resultar difícil.</p>
+          <p>Hay temas que generan vergüenza, temor a ser juzgados o que simplemente nunca pudimos hablar con nadie.</p>
+          <p><strong>No es necesario contar todo en la primera entrevista ni encontrar inmediatamente las palabras para explicar lo que está pasando.</strong></p>
+          <p>El espacio terapéutico también se construye de a poco. Mi trabajo es acompañar ese proceso, respetando los tiempos de cada persona y creando las condiciones para que pueda hablar de aquello que necesita cuando se sienta preparada para hacerlo.</p>
+          <p>Hay preguntas que pueden ser importantes para comprender una dificultad sexual, pero <strong>no se trata de un interrogatorio ni de contar intimidades porque sí</strong>. Lo que vamos explorando tiene un sentido dentro del proceso y se va construyendo juntos.</p>
+          <p class="destacado">Poder sentirse escuchado, respetado y no juzgado también forma parte del tratamiento.</p>
+        </div>
+      </div>
+      <div class="split">
+        <div class="split__aside"><h2>Saber sobre sexualidad también forma parte de la terapia</h2></div>
+        <div class="reading text-flow">
+          <p>A pesar de la enorme cantidad de información disponible actualmente, siguen llegando al consultorio mitos, creencias y expectativas acerca de cómo “debería” funcionar la sexualidad.</p>
+          <p>Cuánto debería durar un encuentro, con qué frecuencia deberíamos tener deseo, cómo debería producirse un orgasmo, qué significa una erección o qué tendría que suceder para considerar satisfactorio un encuentro.</p>
+          <p><strong>Cuestionar esas ideas y construir información sexual más realista también puede ser terapéutico.</strong></p>
+          <p>Porque muchas veces intentamos alcanzar un modelo de sexualidad que poco tiene que ver con nuestro cuerpo, nuestro deseo o nuestra manera particular de experimentar placer.</p>
+        </div>
+      </div>
+      <div class="split">
+        <div class="split__aside"><h2>La sexualidad es más que funcionamiento</h2></div>
+        <div class="reading text-flow">
+          <p>Una consulta sexológica no siempre comienza porque “algo no funciona”.</p>
+          <p>También podemos trabajar sobre el deseo, el placer, la intimidad, el erotismo, los cambios en la sexualidad a lo largo de la vida, la relación con el propio cuerpo, las fantasías, las diferencias de deseo dentro de una pareja o simplemente la posibilidad de construir una sexualidad más propia y menos condicionada por aquello que creemos que debería ser.</p>
+          <p class="destacado">La sexualidad no se reduce al coito, al orgasmo ni al rendimiento.</p>
+        </div>
+      </div>
+      <div class="split">
+        <div class="split__aside"><h2>Un tratamiento a medida</h2></div>
+        <div class="reading text-flow">
+          <p>No existe una técnica que sirva para todas las personas.</p>
+          <p>Primero necesitamos comprender qué está sucediendo y qué factores están interviniendo.</p>
+          <p>A partir de allí, el tratamiento se va construyendo junto con la persona —o con la pareja cuando corresponde— de acuerdo con aquello que necesita.</p>
+          <p>Como decía el Dr. Juan Carlos Kustnezoff, se trata de ir confeccionando <strong>“un traje a medida”</strong>.</p>
+          <p class="destacado">Una terapia sexual no se aplica: se construye.</p>
+        </div>
+      </div>
+      <div class="split">
+        <div class="split__aside"><h2>Algunos motivos de consulta</h2></div>
+        <div class="reading">
+          <ul class="motivos">
+            {motivos.map((m) => (
+              <li>{m.href ? <a class="text-link" href={m.href}>{m.label}</a> : m.label}</li>
+            ))}
+          </ul>
+          <div class="faq">
+            <h2>¿Qué ocurre durante una sesión de terapia sexual?</h2>
+            <p>La terapia sexual es una forma de psicoterapia. Las sesiones son espacios de conversación, evaluación y trabajo terapéutico.</p>
+            <p>Algunos tratamientos pueden incluir ejercicios o propuestas para realizar individualmente o en pareja <strong>fuera de la consulta y en la intimidad</strong>, pero durante las sesiones no se realizan prácticas sexuales, desnudez ni ningún tipo de contacto sexual con la terapeuta.</p>
+            <p>En terapia sexual, las entrevistas pueden ser individuales o en pareja según el motivo de consulta y el momento del tratamiento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ServiceCta />
+</Base>

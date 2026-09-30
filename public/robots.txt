@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sexualidad-activa.com/sitemap-index.xml

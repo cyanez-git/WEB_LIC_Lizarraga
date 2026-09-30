@@ -1,0 +1,104 @@
+---
+import { Picture } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import ServiceCta from '../components/ServiceCta.astro';
+import sillonImg from '../assets/img/sobre-mi-sillon.webp';
+import cuadernoImg from '../assets/img/sobre-mi-cuaderno.webp';
+import marca from '../assets/marca-recalcular.svg?raw';
+
+// Formación: denominaciones pendientes de verificación oficial (ver documento base, sección 7).
+// Pendiente de confirmar con Silvina cómo mencionar la AISM.
+const formacion = [
+  { titulo: 'Licenciada en Psicología', inst: 'Universidad de Buenos Aires' },
+  { titulo: 'Formación de posgrado en Sexología Clínica', inst: 'Facultad de Medicina, Universidad de Buenos Aires' },
+  { titulo: 'Formación especializada en Terapia de Pareja' },
+  { titulo: 'Formación de posgrado en Familia', inst: 'Universidad de Buenos Aires' },
+];
+---
+<Base
+  title="Sobre mí · Silvina Lizarraga"
+  description="Psicóloga (UBA) con formación de posgrado en Sexología Clínica y Familia, y formación en Terapia de Pareja. Un recorrido de vida, formación y experiencia."
+>
+  <section class="about-hero">
+    <div class="container about-hero__inner">
+      <div class="about-hero__content fade-in">
+        <h1>Sobre mí</h1>
+        <p class="lead">Un recorrido de vida, formación y experiencia, con la misma curiosidad y ganas de seguir aprendiendo.</p>
+      </div>
+    </div>
+    <div class="about-hero__media">
+      <Picture
+        src={sillonImg}
+        alt=""
+        formats={['avif', 'webp']}
+        fallbackFormat="webp"
+        widths={[640, 900, 1122]}
+        sizes="(max-width: 899px) 100vw, 60vw"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+    <svg class="about-hero__wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M0 60 C 240 20, 420 18, 640 40 S 1080 96, 1440 30 L 1440 90 L 0 90 Z" />
+    </svg>
+  </section>
+
+  <section class="section" style="padding-top: clamp(40px, 5vw, 72px)">
+    <div class="container about-body">
+      <div class="reading text-flow">
+        <p>Llegué hasta acá después de muchos años de recorrido. Sin prisa, pero sin pausa, aprendiendo de los aciertos y también de los errores, con curiosidad y con las mismas ganas de seguir aprendiendo.</p>
+        <blockquote class="recalcular">
+          <p>Creo que una parte importante de vivir consiste en poder recalcular sin sentir que todo lo anterior fue un error.</p>
+        </blockquote>
+        <p>La vida cambia, nosotros cambiamos y también cambia aquello que necesitamos. Algunas cosas siguen representándonos y queremos conservarlas. Otras fueron valiosas en determinados momentos, pero quizás hoy ya no nos sirven de la misma manera. Recalcular es poder mirar dónde estamos ahora y preguntarnos qué queremos sostener, qué necesitamos revisar y hacia dónde queremos seguir.</p>
+        <p>Esa actitud también atraviesa mi recorrido profesional. Sigo estudiando, preguntándome y revisando mi manera de trabajar. Algunas convicciones se afianzan con los años; otras necesitan ser repensadas a partir de nuevas experiencias, nuevos conocimientos y de cada persona que llega a consulta.</p>
+        <p>No creo que haber vivido ciertas experiencias signifique saber lo que siente otra persona. Cada historia es única. Pero sí creo que los años, la formación y la experiencia fueron transformando mi manera de escuchar, de comprender y de acompañar.</p>
+        <p>Hoy mi trabajo reúne todo ese recorrido, sin perder algo que para mí sigue siendo esencial: <strong>la curiosidad por comprender a la persona que tengo delante y la disposición a seguir aprendiendo.</strong></p>
+      </div>
+      <div class="about-body__aside">
+        <Picture
+          src={cuadernoImg}
+          alt=""
+          formats={['avif', 'webp']}
+          fallbackFormat="webp"
+        fallbackFormat="webp"
+          widths={[420, 640, 900]}
+          sizes="(max-width: 899px) 100vw, 36vw"
+        />
+        <div class="marca" role="img" aria-label="Recalcular también es parte del camino." set:html={marca} />
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><hr class="page-divider" /></div>
+
+  <section class="section" aria-labelledby="trayectoria-title">
+    <div class="container">
+      <p class="eyebrow">Formación y trayectoria</p>
+      <h2 id="trayectoria-title" style="margin-bottom: clamp(40px, 5vw, 64px); max-width: 20ch">Formación y trayectoria profesional</h2>
+      <div class="trayectoria">
+        <div>
+          <h3>Formación</h3>
+          <ul class="formacion">
+            {formacion.map((f) => (
+              <li>
+                <span class="formacion__titulo">{f.titulo}</span>
+                {f.inst && <span class="formacion__inst">{f.inst}</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="reading text-flow">
+          <h3>Experiencia clínica e interdisciplinaria</h3>
+          <p>Durante casi ocho años integré el equipo de Psicología de Obstetricia del Hospital Materno Infantil de San Isidro. Allí acompañé a mujeres durante el embarazo y en situaciones de especial vulnerabilidad, como embarazos de riesgo y pérdidas gestacionales o perinatales.</p>
+          <p>Ese trabajo me permitió desarrollar una experiencia muy profunda en el acompañamiento emocional en momentos de gran intensidad vital, y también en el trabajo conjunto con profesionales de otras disciplinas.</p>
+          <p>En ese mismo marco participé en actividades de docencia y prevención en escuelas sobre salud sexual y reproductiva, y trabajé junto a ginecólogas en espacios de orientación y asesoramiento en esta área.</p>
+          <p>Además realicé una formación de posgrado en Familia en la Universidad de Buenos Aires, que fue sumando herramientas para comprender los vínculos, las transiciones familiares y las distintas etapas del ciclo vital.</p>
+          <!-- Pendiente: "Trayectoria en Sexología Clínica" y "Docencia y formación continua" (ver documento base). -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ServiceCta />
+</Base>

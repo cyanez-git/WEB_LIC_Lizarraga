@@ -1,0 +1,31 @@
+---
+import { SITE, WHATSAPP_URL } from '../data/site';
+import WhatsAppIcon from './WhatsAppIcon.astro';
+
+interface Props {
+  id?: string;
+  headingLevel?: 'h1' | 'h2';
+  eyebrow?: string;
+}
+const { id, headingLevel = 'h2', eyebrow } = Astro.props;
+const Heading = headingLevel;
+---
+<div class="contact" id={id}>
+  <div>
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <Heading>¿Querés contarme qué te está pasando?</Heading>
+    <div class="reading">
+      <p>Podés escribirme y contarme brevemente <strong>qué te sucede o qué te llevó a consultar.</strong></p>
+      <p><strong>No hace falta que sepas de antemano qué tipo de terapia necesitás ni que puedas explicar perfectamente lo que te ocurre.</strong></p>
+      <p>A partir de lo que me cuentes podemos empezar a pensar cuál puede ser la manera más adecuada de abordarlo.</p>
+    </div>
+  </div>
+  <div class="contact__action">
+    <a class="btn" href={WHATSAPP_URL} target="_blank" rel="noopener">
+      <WhatsAppIcon />
+      WhatsApp
+      <span class="visually-hidden">(se abre en una nueva pestaña)</span>
+    </a>
+    <p class="contact__number">{SITE.whatsappDisplay}</p>
+  </div>
+</div>
