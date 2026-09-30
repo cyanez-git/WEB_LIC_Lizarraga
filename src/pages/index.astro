@@ -1,6 +1,7 @@
 ---
 import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
 import ContactBlock from '../components/ContactBlock.astro';
 import heroImg from '../assets/img/hero-cortina-luz.webp';
 
@@ -27,7 +28,7 @@ const areas = [
 ---
 <Base
   title="Silvina Lizarraga · Psicóloga, Sexóloga Clínica y Terapeuta de Pareja"
-  description="Psicoterapia individual, terapia de pareja y sexología clínica. Un espacio para encontrarnos con lo que nos está pasando. Atención online y presencial."
+  description="Psicoterapia individual, terapia de pareja y sexología clínica. Un espacio para encontrarnos con lo que nos está pasando. Atención online y presencial en CABA (Barrio Norte) y San Isidro."
 >
   <section class="hero" aria-labelledby="hero-title">
     <div class="container hero__inner">
@@ -117,6 +118,7 @@ const areas = [
           <li>Presencial</li>
         </ul>
         <p>Atención online y presencial, según disponibilidad.</p>
+        <p>Consultorios en <strong>{SITE.consultorios[0]}</strong> y <strong>{SITE.consultorios[1]}</strong>.</p>
       </div>
     </div>
   </section>

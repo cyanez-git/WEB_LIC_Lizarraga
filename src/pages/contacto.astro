@@ -1,10 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
 import ContactBlock from '../components/ContactBlock.astro';
 ---
 <Base
   title="Contacto · Silvina Lizarraga"
-  description="¿Querés contarme qué te está pasando? Podés escribirme por WhatsApp. Atención online y presencial, según disponibilidad."
+  description="¿Querés contarme qué te está pasando? Podés escribirme por WhatsApp. Atención online y presencial en CABA (Barrio Norte) y San Isidro."
 >
   <section class="page-hero">
     <div class="container">
@@ -23,6 +24,7 @@ import ContactBlock from '../components/ContactBlock.astro';
           <li>Presencial</li>
         </ul>
         <p>Atención <strong>online y presencial</strong>, según disponibilidad.</p>
+        <p>Consultorios en <strong>{SITE.consultorios[0]}</strong> y <strong>{SITE.consultorios[1]}</strong>.</p>
         <p>En terapia sexual, las entrevistas pueden ser individuales o en pareja según el motivo de consulta y el momento del tratamiento.</p>
         <p>En terapia de pareja, la modalidad se define dentro del encuadre según las necesidades del proceso.</p>
       </div>
