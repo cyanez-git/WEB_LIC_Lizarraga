@@ -22,11 +22,19 @@ const schema = {
   url: SITE.url,
   telephone: `+${SITE.whatsappNumber}`,
   alumniOf: { '@type': 'CollegeOrUniversity', name: 'Universidad de Buenos Aires' },
-  hasCredential: SITE.matriculas.map((m) => ({
-    '@type': 'EducationalOccupationalCredential',
-    credentialCategory: 'Matrícula profesional',
-    name: `Licenciada en Psicología — ${m}`,
-  })),
+  hasCredential: [
+    ...SITE.matriculas.map((m) => ({
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'Matrícula profesional',
+      name: `Licenciada en Psicología — ${m}`,
+    })),
+    {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'Acreditación profesional',
+      name: 'Sexóloga Clínica acreditada por la Asociación Internacional de Sexología Médica (AISM)',
+      recognizedBy: { '@type': 'Organization', name: 'Asociación Internacional de Sexología Médica (AISM)' },
+    },
+  ],
   knowsAbout: ['Psicoterapia individual', 'Terapia de pareja', 'Sexología clínica', 'Terapia sexual'],
   contactPoint: { '@type': 'ContactPoint', contactType: 'WhatsApp', url: WHATSAPP_URL },
 };

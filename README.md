@@ -45,7 +45,5 @@ npm run preview   # sirve dist/ localmente
 ## Pendientes
 
 - Redirecciones de las URLs del sitio anterior (`public/.htaccess`).
-- Mención de la AISM en "Formación y trayectoria" (`src/pages/sobre-mi.astro`).
-- Denominaciones oficiales de la formación; bloques "Trayectoria en Sexología Clínica" y "Docencia".
 - Mención de consultorios (CABA / San Isidro).
 - Fase 2: páginas por motivo de consulta (agregar `href` en `src/pages/sexologia-clinica.astro`).

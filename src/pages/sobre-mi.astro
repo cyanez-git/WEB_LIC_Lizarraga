@@ -6,18 +6,25 @@ import sillonImg from '../assets/img/sobre-mi-sillon.webp';
 import cuadernoImg from '../assets/img/sobre-mi-cuaderno.webp';
 import marca from '../assets/marca-recalcular.svg?raw';
 
-// Formación: denominaciones pendientes de verificación oficial (ver documento base, sección 7).
-// Pendiente de confirmar con Silvina cómo mencionar la AISM.
-const formacion = [
-  { titulo: 'Licenciada en Psicología', inst: 'Universidad de Buenos Aires' },
-  { titulo: 'Formación de posgrado en Sexología Clínica', inst: 'Facultad de Medicina, Universidad de Buenos Aires' },
-  { titulo: 'Formación especializada en Terapia de Pareja' },
-  { titulo: 'Formación de posgrado en Niñez y Familia', inst: 'Universidad de Buenos Aires' },
+// Resumen de títulos (denominaciones confirmadas por Silvina, documento v1.1).
+const formacion: { titulo: string; inst?: string[] }[] = [
+  { titulo: 'Licenciada en Psicología', inst: ['Universidad de Buenos Aires'] },
+  { titulo: 'Posgrado en Niñez y Familia', inst: ['Universidad de Buenos Aires'] },
+  {
+    titulo: 'Posgrado en Sexología Clínica',
+    inst: [
+      'UBA · Facultad de Medicina · Secretaría de Extensión Universitaria · Hospital de Clínicas',
+      'Dirigido por el Dr. Juan Carlos Kustnezoff',
+    ],
+  },
+  { titulo: 'Sexóloga Clínica acreditada por la Asociación Internacional de Sexología Médica (AISM)' },
+  { titulo: 'Terapia de Pareja', inst: ['CTC · Terapia Focalizada en las Emociones (TFE)'] },
+  { titulo: 'Orientación Familiar', inst: ['Hospital de Vicente López'] },
 ];
 ---
 <Base
   title="Sobre mí · Silvina Lizarraga"
-  description="Psicóloga (UBA) con formación de posgrado en Sexología Clínica y en Niñez y Familia, y formación en Terapia de Pareja. Un recorrido de vida, formación y experiencia."
+  description="Psicóloga (UBA) y Sexóloga Clínica acreditada por la AISM, con formación de posgrado en Sexología Clínica y en Niñez y Familia, y formación en Terapia de Pareja."
 >
   <section class="about-hero">
     <div class="container about-hero__inner">
@@ -61,7 +68,6 @@ const formacion = [
           alt=""
           formats={['avif', 'webp']}
           fallbackFormat="webp"
-        fallbackFormat="webp"
           widths={[420, 640, 900]}
           sizes="(max-width: 899px) 100vw, 36vw"
         />
@@ -72,10 +78,10 @@ const formacion = [
 
   <div class="container"><hr class="page-divider" /></div>
 
-  <section class="section" aria-labelledby="trayectoria-title">
+  <section class="section band" aria-labelledby="trayectoria-title">
     <div class="container">
       <p class="eyebrow">Formación y trayectoria</p>
-      <h2 id="trayectoria-title" style="margin-bottom: clamp(40px, 5vw, 64px); max-width: 20ch">Formación y trayectoria profesional</h2>
+      <h2 id="trayectoria-title" class="trayectoria__title">Formación y trayectoria profesional</h2>
       <div class="trayectoria">
         <div>
           <h3>Formación</h3>
@@ -83,19 +89,67 @@ const formacion = [
             {formacion.map((f) => (
               <li>
                 <span class="formacion__titulo">{f.titulo}</span>
-                {f.inst && <span class="formacion__inst">{f.inst}</span>}
+                {f.inst?.map((line) => <span class="formacion__inst">{line}</span>)}
               </li>
             ))}
           </ul>
         </div>
         <div class="reading text-flow">
-          <h3>Experiencia clínica e interdisciplinaria</h3>
-          <p>Durante casi ocho años integré el equipo de Psicología de Obstetricia del Hospital Materno Infantil de San Isidro. Allí acompañé a mujeres durante el embarazo y en situaciones de especial vulnerabilidad, como embarazos de riesgo y pérdidas gestacionales o perinatales.</p>
-          <p>Ese trabajo me permitió desarrollar una experiencia muy profunda en el acompañamiento emocional en momentos de gran intensidad vital, y también en el trabajo conjunto con profesionales de otras disciplinas.</p>
-          <p>En ese mismo marco participé en actividades de docencia y prevención en escuelas sobre salud sexual y reproductiva, y trabajé junto a ginecólogas en espacios de orientación y asesoramiento en esta área.</p>
-          <p>Además realicé una formación de posgrado en Niñez y Familia en la Universidad de Buenos Aires, que fue sumando herramientas para comprender los vínculos, las transiciones familiares y las distintas etapas del ciclo vital.</p>
-          <!-- Pendiente: "Trayectoria en Sexología Clínica" y "Docencia y formación continua" (ver documento base). -->
+          <p class="lead">Mi recorrido profesional comenzó antes de recibirme de psicóloga.</p>
+          <p>Durante varios años fui <strong>docente de escuela primaria</strong>, principalmente de primero, segundo y tercer grado. Esa primera experiencia con la infancia y las familias fue despertando en mí un interés cada vez mayor por comprender los vínculos y aquello que sucede detrás de las dificultades que aparecen en distintos momentos de la vida.</p>
+          <p>Más adelante realicé una formación en <strong>Orientación Familiar en el Hospital de Vicente López</strong>. A partir de allí trabajé durante aproximadamente cuatro años en una institución residencial para <strong>personas adultas con discapacidad motora</strong>.</p>
+          <p>Fue una experiencia muy significativa, que me acercó de manera directa a cuestiones relacionadas con la autonomía, la dependencia, los vínculos familiares, la adaptación y la calidad de vida, y amplió mi manera de mirar a la persona más allá de un diagnóstico o de una condición física.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band section--alt">
+    <div class="container split">
+      <div class="split__aside"><h3>Ya siendo psicóloga: niñez, familia y maternidad</h3></div>
+      <div class="reading text-flow">
+        <p>Ya siendo psicóloga, realicé una formación de posgrado en <strong>Niñez y Familia en la Universidad de Buenos Aires</strong>.</p>
+        <p>Durante casi ocho años integré el equipo de Psicología de Obstetricia del <strong>Hospital Materno Infantil de San Isidro</strong>.</p>
+        <p>Allí acompañé a mujeres durante el embarazo y en situaciones de especial complejidad emocional: embarazos de riesgo, pérdidas gestacionales o perinatales, nacimientos prematuros y situaciones en las que los bebés presentaban dificultades físicas u orgánicas.</p>
+        <p>El trabajo se realizaba de manera interdisciplinaria con los equipos médicos. También participé junto a ginecólogas en espacios de orientación en <strong>salud sexual y reproductiva</strong> y en actividades de educación y prevención en escuelas.</p>
+        <p>Fue una etapa muy importante de mi recorrido, tanto por el acompañamiento de momentos vitales de enorme intensidad como por el aprendizaje del trabajo conjunto con profesionales de otras disciplinas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="container split">
+      <div class="split__aside"><h3>Sexología Clínica — Hospital de Clínicas</h3></div>
+      <div class="reading text-flow">
+        <p>Posteriormente comenzó una etapa que ocuparía <strong>más de diez años</strong> de mi recorrido profesional en el <strong>Hospital de Clínicas José de San Martín</strong>, integrando el equipo de Sexología dirigido por el Dr. Juan Carlos Kustnezoff.</p>
+        <p>El consultorio de Sexología funcionaba dentro de la <strong>Unidad de Urología</strong> del hospital y recibía una demanda clínica muy amplia.</p>
+        <p>Mi trabajo incluía atención en consultorio junto al Dr. Kustnezoff y también atención individual de personas que consultaban por diferentes dificultades relacionadas con su sexualidad.</p>
+        <p>Esa experiencia fue central en mi formación como sexóloga clínica. Me permitió trabajar durante años con una gran diversidad de consultas y consolidar una mirada integral de la sexualidad, en la que los aspectos psicológicos, vinculares y médicos necesitan ser pensados en conjunto.</p>
+        <p>Realicé además la formación de posgrado en <strong>Sexología Clínica</strong> dirigida por el Dr. Kustnezoff y posteriormente participé como <strong>docente colaboradora</strong> en esa misma formación.</p>
+        <p>Durante varios años, la práctica clínica y la docencia transcurrieron así de manera paralela, en un espacio en el que aprender, enseñar y revisar la práctica formaban parte del mismo recorrido.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band section--alt">
+    <div class="container split">
+      <div class="split__aside"><h3>Terapia de pareja</h3></div>
+      <div class="reading text-flow">
+        <p>A lo largo de mi recorrido profesional fui incorporando también formación específica en <strong>Terapia de Pareja</strong>, mientras este campo iba ocupando un lugar cada vez más importante en mi práctica privada.</p>
+        <p>Realicé dos formaciones en el <strong>CTC</strong> y posteriormente profundicé este trabajo con formación en <strong>Terapia Focalizada en las Emociones (TFE)</strong>, completando el <strong>externship</strong> y dos módulos de formación.</p>
+        <p>Esta mirada se fue integrando naturalmente con mi experiencia en psicología y sexología clínica, permitiéndome trabajar no solamente con lo que le sucede a cada persona, sino también con <strong>la dinámica que se construye en el vínculo</strong>: los ciclos que se repiten, las formas de acercarse y alejarse, la comunicación y las necesidades emocionales que muchas veces quedan por debajo del conflicto visible.</p>
+        <p>Hoy la psicoterapia individual, la terapia de pareja y la sexología clínica no son para mí compartimentos separados, sino distintas puertas de entrada para comprender a las personas y los vínculos en toda su complejidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="container split">
+      <div class="split__aside"><h3>Formación continua</h3></div>
+      <div class="reading text-flow">
+        <p>La formación no terminó para mí con los títulos o los posgrados.</p>
+        <p>Continúo participando en cursos, jornadas y congresos de actualización en psicoterapia, sexología y terapia de pareja.</p>
+        <p class="destacado">Seguir estudiando, incorporar nuevas perspectivas y revisar lo aprendido forma parte de mi manera de ejercer la profesión.</p>
       </div>
     </div>
   </section>
