@@ -2,7 +2,7 @@ export const SITE = {
   name: 'Silvina Lizarraga',
   tagline: 'Psicóloga · Sexóloga Clínica · Terapeuta de Pareja',
   url: 'https://sexualidad-activa.com',
-  matricula: 'M.N. 40564',
+  matriculas: ['M.N. 40564', 'M.P. 94321'],
   whatsappDisplay: '+54 9 11 2254-0922',
   whatsappNumber: '5491122540922',
   whatsappMessage: 'Hola Silvina, quería hacerte una consulta.',

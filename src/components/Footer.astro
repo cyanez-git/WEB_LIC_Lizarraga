@@ -8,7 +8,7 @@ const year = new Date().getFullYear();
       <div>
         <p class="site-footer__name">{SITE.name}</p>
         <p class="site-footer__tagline">{SITE.tagline}</p>
-        <p class="site-footer__tagline">Lic. en Psicología · {SITE.matricula}</p>
+        <p class="site-footer__tagline">Lic. en Psicología · {SITE.matriculas.join(' · ')}</p>
       </div>
       <nav class="site-footer__nav" aria-label="Pie de página">
         <ul>

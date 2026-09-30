@@ -22,11 +22,11 @@ const schema = {
   url: SITE.url,
   telephone: `+${SITE.whatsappNumber}`,
   alumniOf: { '@type': 'CollegeOrUniversity', name: 'Universidad de Buenos Aires' },
-  hasCredential: {
+  hasCredential: SITE.matriculas.map((m) => ({
     '@type': 'EducationalOccupationalCredential',
     credentialCategory: 'Matrícula profesional',
-    name: `Licenciada en Psicología — ${SITE.matricula}`,
-  },
+    name: `Licenciada en Psicología — ${m}`,
+  })),
   knowsAbout: ['Psicoterapia individual', 'Terapia de pareja', 'Sexología clínica', 'Terapia sexual'],
   contactPoint: { '@type': 'ContactPoint', contactType: 'WhatsApp', url: WHATSAPP_URL },
 };
