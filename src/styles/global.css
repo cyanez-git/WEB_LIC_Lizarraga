@@ -382,14 +382,32 @@ a { color: inherit; }
   .marca { margin: 0 auto; max-width: 300px; }
 }
 
-.trayectoria { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px clamp(48px, 7vw, 120px); align-items: start; }
-.trayectoria__title { margin-bottom: clamp(40px, 5vw, 64px); max-width: 20ch; }
-.trayectoria h3 { font-size: 1.0625rem; font-family: var(--sans); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra-text); margin-bottom: 24px; }
-.formacion li { padding: 20px 0; border-top: 1px solid var(--line); }
-.formacion li:last-child { border-bottom: 1px solid var(--line); }
-.formacion__titulo { display: block; font-family: var(--serif); font-size: 1.3rem; line-height: 1.3; color: var(--ink); }
-.formacion__inst { display: block; margin-top: 4px; line-height: 1.45; font-size: var(--fs-small); color: var(--muted); }
-@media (max-width: 899px) { .trayectoria { grid-template-columns: 1fr; } }
+/* ---------- Recorrido profesional (Sobre mí) ---------- */
+.recorrido { list-style: none; margin: 0; padding: 0; border-left: 1.5px solid var(--terra-line); }
+.etapa { position: relative; padding: 0 0 clamp(40px, 4vw, 56px) clamp(28px, 3vw, 44px); }
+.etapa:last-child { padding-bottom: 4px; }
+.etapa::before {
+  content: ''; position: absolute; left: -6px; top: 0.55em;
+  width: 10.5px; height: 10.5px; border-radius: 50%;
+  background: var(--bg); border: 1.5px solid var(--terra);
+}
+.etapa__titulo { font-size: clamp(1.45rem, 1.25rem + 0.7vw, 1.9rem); line-height: 1.2; margin-bottom: 16px; }
+.etapa__datos { display: grid; gap: 8px; margin-bottom: 14px; }
+.etapa__datos li { position: relative; padding-left: 22px; color: var(--text); line-height: 1.5; }
+.etapa__datos li::before { content: ''; position: absolute; left: 0; top: 0.75em; width: 10px; height: 1.5px; background: var(--terra); }
+.etapa__cierre .destacado { margin: 1.2em 0 0; }
+.etapa__mas summary {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px;
+  cursor: pointer; list-style: none; font-weight: 500; color: var(--ink);
+  border-bottom: 1.5px solid var(--terra-line); transition: color var(--ease);
+}
+.etapa__mas summary::-webkit-details-marker { display: none; }
+.etapa__mas summary::after { content: '↓'; transition: transform var(--ease); }
+.etapa__mas[open] summary::after { transform: rotate(180deg); }
+.etapa__mas summary:hover { color: var(--terra-text); }
+.etapa__cerrar, .etapa__mas[open] .etapa__abrir { display: none; }
+.etapa__mas[open] .etapa__cerrar { display: inline; }
+.etapa__mas .text-flow { padding-top: 20px; }
 
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--line); padding-block: clamp(56px, 6vw, 88px) 36px; font-size: var(--fs-small); }
