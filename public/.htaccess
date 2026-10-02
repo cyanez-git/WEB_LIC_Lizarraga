@@ -26,11 +26,9 @@ ErrorDocument 404 /404.html
   RewriteRule ^CrisisdePareja\.html$ https://sexualidad-activa.com/terapia-de-pareja/ [NC,R=301,L]
   RewriteRule ^TerapiaOnLine\.html$ https://sexualidad-activa.com/contacto/ [NC,R=301,L]
   RewriteRule ^PreguntasFrecuentes\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
-
-  # Provisorias: actualizar cuando existan las páginas de Fase 2
-  RewriteRule ^EyaculacionPrecoz\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
-  RewriteRule ^ProblemasEreccion\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
-  RewriteRule ^FaltaDeseo\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^EyaculacionPrecoz\.html$ https://sexualidad-activa.com/sexologia-clinica/eyaculacion-rapida/ [NC,R=301,L]
+  RewriteRule ^ProblemasEreccion\.html$ https://sexualidad-activa.com/sexologia-clinica/dificultades-de-ereccion/ [NC,R=301,L]
+  RewriteRule ^FaltaDeseo\.html$ https://sexualidad-activa.com/sexologia-clinica/deseo-sexual/ [NC,R=301,L]
 
   # Artículos generales sin equivalente: la página más cercana
   RewriteRule ^Mitos\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]

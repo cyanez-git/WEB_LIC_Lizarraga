@@ -60,15 +60,15 @@ y probadas en Apache.
 | `CrisisdePareja.html` | `/terapia-de-pareja/` |
 | `TerapiaOnLine.html` | `/contacto/` |
 | `PreguntasFrecuentes.html` | `/sexologia-clinica/` |
-| `EyaculacionPrecoz.html`, `ProblemasEreccion.html`, `FaltaDeseo.html` | `/sexologia-clinica/` (provisorio, hasta tener sus páginas) |
+| `EyaculacionPrecoz.html` | `/sexologia-clinica/eyaculacion-rapida/` |
+| `ProblemasEreccion.html` | `/sexologia-clinica/dificultades-de-ereccion/` |
+| `FaltaDeseo.html` | `/sexologia-clinica/deseo-sexual/` |
 | `Mitos`, `Kamasutra`, `Afrodisiacos`, `Alcohol`, `Stress`, `Embarazo`, `TereceraEdad`, `Adolescente`, `EducacionSexual`, `Fobias` (`.html`) | `/sexologia-clinica/` |
 | `Hijos.html`, `Identidad.html` | `/psicoterapia-individual/` |
 | `TalleresyCharlas.html` | `/` |
 
 ## Pendientes
 
-- Cuando existan las páginas de Eyaculación rápida, Erección y Deseo: actualizar sus
-  redirecciones provisorias en `public/.htaccess`.
-- Fase 2: faltan las páginas de Deseo sexual, Dificultades de erección y Eyaculación rápida.
-  Los textos de cada motivo viven en `src/data/motivos.ts`: al agregar `slug` y `pagina`,
-  se genera `/sexologia-clinica/<slug>/` y el motivo pasa a ser enlace en Sexología clínica.
+- Analytics (GA4), aviso de cookies y política de privacidad: esperando el ID de medición.
+- Motivos de consulta: los textos viven en `src/data/motivos.ts`; al agregar uno con `slug`
+  y `pagina` se genera `/sexologia-clinica/<slug>/` automáticamente.
