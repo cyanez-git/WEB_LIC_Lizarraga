@@ -45,5 +45,6 @@ npm run preview   # sirve dist/ localmente
 ## Pendientes
 
 - Redirecciones de las URLs del sitio anterior (`public/.htaccess`).
-- Mención de consultorios (CABA / San Isidro).
-- Fase 2: páginas por motivo de consulta (agregar `href` en `src/pages/sexologia-clinica.astro`).
+- Fase 2: faltan las páginas de Deseo sexual, Dificultades de erección y Eyaculación rápida.
+  Los textos de cada motivo viven en `src/data/motivos.ts`: al agregar `slug` y `pagina`,
+  se genera `/sexologia-clinica/<slug>/` y el motivo pasa a ser enlace en Sexología clínica.

@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import Bloques from '../../components/Bloques.astro';
+import ContactBlock from '../../components/ContactBlock.astro';
+import { MOTIVOS, motivoHref, type Motivo, type PaginaMotivo } from '../../data/motivos';
+
+export function getStaticPaths() {
+  return MOTIVOS.filter((m) => m.slug && m.pagina).map((m) => ({ params: { slug: m.slug }, props: { motivo: m } }));
+}
+
+const { motivo } = Astro.props as { motivo: Motivo };
+const pagina = motivo.pagina as PaginaMotivo;
+const otros = MOTIVOS.filter((m) => m !== motivo && m.pagina);
+// Las franjas alternan fondo empezando en hueso; el cierre toma el fondo opuesto a la última.
+const cierreAlt = pagina.secciones.length % 2 === 0;
+---
+<Base title={pagina.title} description={pagina.description}>
+  <section class="page-hero">
+    <div class="container">
+      <nav class="volver" aria-label="Ubicación">
+        <a href="/sexologia-clinica/">← Sexología clínica</a>
+      </nav>
+      <h1><span class="eyebrow">{motivo.label}</span>{pagina.h1}</h1>
+      <div class="reading text-flow">
+        <Bloques bloques={pagina.intro} />
+      </div>
+    </div>
+  </section>
+
+  {pagina.secciones.map((sec, i) => (
+    <section class={`section band${i % 2 === 0 ? ' section--alt' : ''}`}>
+      <div class="container split">
+        <div class="split__aside"><h2>{sec.titulo}</h2></div>
+        <div class="reading text-flow">
+          <Bloques bloques={sec.bloques} />
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class={`section${cierreAlt ? ' section--alt' : ''}`} aria-label="Contacto">
+    <div class="container">
+      <ContactBlock eyebrow="Contacto" />
+      {otros.length > 0 && (
+        <nav class="otros-motivos" aria-labelledby="otros-motivos-title">
+          <p class="eyebrow" id="otros-motivos-title">Otros motivos de consulta</p>
+          <ul>
+            {otros.map((m) => <li><a class="link-arrow" href={motivoHref(m)}>{m.label}</a></li>)}
+            <li><a class="link-arrow" href="/sexologia-clinica/">Sexología clínica</a></li>
+          </ul>
+        </nav>
+      )}
+    </div>
+  </section>
+</Base>

@@ -1,17 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import ServiceCta from '../components/ServiceCta.astro';
-
-// Fase 2: cada motivo tendrá su propia página. Cuando exista, agregar `href`
-// y el ítem se mostrará como enlace.
-const motivos: { label: string; href?: string }[] = [
-  { label: 'Deseo sexual' },
-  { label: 'Dificultades de erección' },
-  { label: 'Eyaculación rápida' },
-  { label: 'Eyaculación retardada' },
-  { label: 'Dificultades relacionadas con el orgasmo' },
-  { label: 'Dolor y dificultades en la penetración' },
-];
+import { MOTIVOS, motivoHref } from '../data/motivos';
 ---
 <Base
   title="Sexología clínica y terapia sexual · Silvina Lizarraga"
@@ -110,8 +100,8 @@ const motivos: { label: string; href?: string }[] = [
         <div class="split__aside"><h2>Algunos motivos de consulta</h2></div>
         <div class="reading">
           <ul class="motivos">
-            {motivos.map((m) => (
-              <li>{m.href ? <a class="text-link" href={m.href}>{m.label}</a> : m.label}</li>
+            {MOTIVOS.map((m) => (
+              <li>{m.pagina ? <a class="motivos__link" href={motivoHref(m)}>{m.label}</a> : m.label}</li>
             ))}
           </ul>
           <div class="faq">
