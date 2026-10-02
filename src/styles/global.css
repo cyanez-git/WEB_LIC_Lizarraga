@@ -331,6 +331,7 @@ a { color: inherit; }
 @media (max-width: 899px) {
   .page-hero--media .container { grid-template-columns: 1fr; gap: 36px; }
   .page-hero__media img { aspect-ratio: 16 / 10; object-position: var(--encuadre); }
+  .page-hero__media--solo-escritorio { display: none; }
 }
 .page-divider { border: 0; border-top: 1px solid var(--line); margin: 0; }
 

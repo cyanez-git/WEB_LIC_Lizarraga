@@ -6,10 +6,12 @@ interface Props {
   src: ImageMetadata;
   /** Encuadre en celulares, donde la imagen se muestra apaisada. */
   encuadre?: string;
+  /** Si es true, en celulares no se muestra. */
+  soloEscritorio?: boolean;
 }
-const { src, encuadre = '50% 50%' } = Astro.props;
+const { src, encuadre = '50% 50%', soloEscritorio = false } = Astro.props;
 ---
-<div class="page-hero__media" style={`--encuadre: ${encuadre}`}>
+<div class:list={['page-hero__media', { 'page-hero__media--solo-escritorio': soloEscritorio }]} style={`--encuadre: ${encuadre}`}>
   <Picture
     src={src}
     alt=""
@@ -17,6 +19,6 @@ const { src, encuadre = '50% 50%' } = Astro.props;
     fallbackFormat="webp"
     widths={[480, 760, 1122]}
     sizes="(max-width: 899px) calc(100vw - 40px), 380px"
-    loading="eager"
+    loading={soloEscritorio ? 'lazy' : 'eager'}
   />
 </div>
