@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import ServiceCta from '../components/ServiceCta.astro';
 import sillonImg from '../assets/img/sobre-mi-sillon.webp';
 import cuadernoImg from '../assets/img/sobre-mi-cuaderno.webp';
+import fotoSilvina from '../assets/img/silvina-lizarraga.webp';
 import marca from '../assets/marca-recalcular.svg?raw';
 
 // Recorrido profesional por etapas (texto de Silvina, documento v1.1).
@@ -138,6 +139,15 @@ const etapas: { titulo: string; datos: string[]; texto?: string[]; cierre?: stri
       <div class="split__aside">
         <p class="eyebrow">Formación y trayectoria</p>
         <h2 id="trayectoria-title">Formación y trayectoria profesional</h2>
+        <Picture
+          class="retrato"
+          src={fotoSilvina}
+          alt="Silvina Lizarraga, psicóloga, sexóloga clínica y terapeuta de pareja"
+          formats={['avif', 'webp']}
+          fallbackFormat="webp"
+          widths={[320, 480, 680]}
+          sizes="(max-width: 899px) 280px, 340px"
+        />
       </div>
       <ol class="recorrido">
         {etapas.map((etapa) => (
