@@ -92,6 +92,5 @@ Todo en la cabecera de cada página (no cambia el texto visible):
 
 ## Pendientes
 
-- Revisión de la política de privacidad (`src/pages/privacidad.astro`) por Silvina o asesoría legal.
 - Motivos de consulta: los textos viven en `src/data/motivos.ts`; al agregar uno con `slug`
   y `pagina` se genera `/sexologia-clinica/<slug>/` automáticamente.
