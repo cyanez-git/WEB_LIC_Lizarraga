@@ -141,7 +141,7 @@ export const MOTIVOS: Motivo[] = [
             'voz:¿Por qué todavía no puedo?<br />¿Qué tendría que estar sintiendo?<br />¿La otra persona se estará dando cuenta?',
             'Y aquello que necesita conexión con el cuerpo puede convertirse en una evaluación permanente de si la respuesta está sucediendo como “debería”.',
             'La otra persona también puede entrar en esa lógica y empezar a esforzarse cada vez más para conseguir el orgasmo.',
-            '**Entonces dos personas pueden terminar trabajando para producir una respuesta en lugar de compartir placer.**',
+            '**Y el encuentro empieza a parecerse más a conseguir aprobar un examen que a un espacio para compartir placer.**',
           ],
         },
         {
@@ -163,7 +163,7 @@ export const MOTIVOS: Motivo[] = [
           ],
         },
         {
-          titulo: 'Mucho más que llegar',
+          titulo: 'Más que una meta',
           bloques: [
             'El orgasmo puede ser una experiencia muy placentera.',
             'Pero **no es el certificado de que hubo una buena relación sexual, ni su ausencia significa necesariamente que no hubo placer.**',
@@ -234,7 +234,7 @@ export const MOTIVOS: Motivo[] = [
           bloques: [
             'Cuando durante mucho tiempo el cuerpo estuvo asociado con dolor, miedo o esfuerzo, el problema ya no es solamente si la penetración resulta posible.',
             'También importa qué ocurre con la confianza en el propio cuerpo, con el deseo, con el placer y con la posibilidad de elegir cómo vivir la sexualidad.',
-            'dest:Que algo pueda penetrar no es el objetivo final. Poder vivir la propia sexualidad sin dolor, sin miedo y con mayor libertad tiene mucho más sentido.',
+            'dest:Que la penetración sea posible no es el objetivo final. Poder vivir la propia sexualidad sin dolor, sin miedo y con mayor libertad tiene mucho más sentido.',
           ],
         },
       ],

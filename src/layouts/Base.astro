@@ -39,6 +39,7 @@ const schema = {
     { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: 'Barrio Norte', addressRegion: 'Ciudad Autónoma de Buenos Aires', addressCountry: 'AR' } },
     { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: 'San Isidro', addressRegion: 'Provincia de Buenos Aires', addressCountry: 'AR' } },
   ],
+  sameAs: SITE.redes.map((r) => r.href),
   knowsAbout: ['Psicoterapia individual', 'Terapia de pareja', 'Sexología clínica', 'Terapia sexual'],
   contactPoint: { '@type': 'ContactPoint', contactType: 'WhatsApp', url: WHATSAPP_URL },
 };

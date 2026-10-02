@@ -10,21 +10,52 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Forzar HTTPS
-  RewriteCond %{HTTPS} !=on
-  RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  # ------------------------------------------------------------------------
+  # Redirecciones del sitio anterior (Mobirise). Permanentes (301) y sin
+  # distinguir mayúsculas. Ver el inventario en README.md.
+  # ------------------------------------------------------------------------
+
+  # Equivalente directo
+  # Solo si se pidió explícitamente /index.html (evita el bucle con DirectoryIndex)
+  RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+  RewriteRule ^index\.html$ https://sexualidad-activa.com/ [NC,R=301,L]
+  RewriteRule ^EyaculacionRetardada\.html$ https://sexualidad-activa.com/sexologia-clinica/eyaculacion-retardada/ [NC,R=301,L]
+  RewriteRule ^Anorgasmia\.html$ https://sexualidad-activa.com/sexologia-clinica/dificultades-con-el-orgasmo/ [NC,R=301,L]
+  RewriteRule ^Dispareunia\.html$ https://sexualidad-activa.com/sexologia-clinica/dolor-en-la-penetracion/ [NC,R=301,L]
+  RewriteRule ^Vaginismo\.html$ https://sexualidad-activa.com/sexologia-clinica/dolor-en-la-penetracion/ [NC,R=301,L]
+  RewriteRule ^CrisisdePareja\.html$ https://sexualidad-activa.com/terapia-de-pareja/ [NC,R=301,L]
+  RewriteRule ^TerapiaOnLine\.html$ https://sexualidad-activa.com/contacto/ [NC,R=301,L]
+  RewriteRule ^PreguntasFrecuentes\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+
+  # Provisorias: actualizar cuando existan las páginas de Fase 2
+  RewriteRule ^EyaculacionPrecoz\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^ProblemasEreccion\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^FaltaDeseo\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+
+  # Artículos generales sin equivalente: la página más cercana
+  RewriteRule ^Mitos\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^Kamasutra\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^Afrodisiacos\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^Alcohol\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^Stress\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^Embarazo\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^TereceraEdad\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^Adolescente\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^EducacionSexual\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^Fobias\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^Hijos\.html$ https://sexualidad-activa.com/psicoterapia-individual/ [NC,R=301,L]
+  RewriteRule ^Identidad\.html$ https://sexualidad-activa.com/psicoterapia-individual/ [NC,R=301,L]
+  RewriteRule ^TalleresyCharlas\.html$ https://sexualidad-activa.com/ [NC,R=301,L]
 
   # www -> sin www
   RewriteCond %{HTTP_HOST} ^www\.sexualidad-activa\.com$ [NC]
   RewriteRule ^ https://sexualidad-activa.com%{REQUEST_URI} [L,R=301]
 
-  # ------------------------------------------------------------------------
-  # Redirecciones de URLs del sitio anterior (Mobirise).
-  # Completar con el inventario de páginas indexadas antes de publicar.
-  # Formato: RewriteRule ^pagina-vieja\.html$ /pagina-nueva/ [L,R=301]
-  # ------------------------------------------------------------------------
-  # RewriteRule ^index\.php$ / [L,R=301]
+  # Forzar HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 </IfModule>
 
 # Compresión

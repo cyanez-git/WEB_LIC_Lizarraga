@@ -37,14 +37,38 @@ npm run preview   # sirve dist/ localmente
 1. **Backup completo** del `public_html` actual (Administrador de archivos → comprimir y descargar).
 2. `npm run build`.
 3. Subir **el contenido** de `dist/` (incluido el archivo oculto `.htaccess`) a `public_html`.
-4. Quitar del `public_html` los archivos del sitio anterior (Mobirise) **después** de tener las
-   redirecciones cargadas en `.htaccess`. No tocar carpetas del sistema ni nada relacionado con el correo.
-5. Verificar que el certificado SSL esté activo (cPanel → SSL/TLS Status / AutoSSL).
-6. Enviar `https://sexualidad-activa.com/sitemap-index.xml` en Google Search Console.
+4. Del sitio anterior, **borrar**: los `.html` viejos (`Mitos.html`, `Kamasutra.html`, etc.;
+   `index.html` se reemplaza por el nuevo), la carpeta `assets/`, `project.mobirise` y el
+   `sitemap.xml` viejo. Las direcciones viejas siguen funcionando por las redirecciones.
+5. **No borrar**: `googleb7aaaf8d166bdc10.html` (verificación de Search Console; también viene
+   en `dist/`), `ftpquota`, `cgi-bin/`, ni carpetas del sistema o del correo.
+6. Verificar que el certificado SSL esté activo (cPanel → SSL/TLS Status / AutoSSL).
+7. En Search Console: enviar `https://sexualidad-activa.com/sitemap-index.xml` y quitar el
+   sitemap viejo (`/sitemap.xml`) si figura.
+
+## Redirecciones del sitio anterior
+
+Todas permanentes (301), sin distinguir mayúsculas, definidas en `public/.htaccess`
+y probadas en Apache.
+
+| Página vieja | Destino |
+|---|---|
+| `index.html` | `/` |
+| `EyaculacionRetardada.html` | `/sexologia-clinica/eyaculacion-retardada/` |
+| `Anorgasmia.html` | `/sexologia-clinica/dificultades-con-el-orgasmo/` |
+| `Dispareunia.html`, `Vaginismo.html` | `/sexologia-clinica/dolor-en-la-penetracion/` |
+| `CrisisdePareja.html` | `/terapia-de-pareja/` |
+| `TerapiaOnLine.html` | `/contacto/` |
+| `PreguntasFrecuentes.html` | `/sexologia-clinica/` |
+| `EyaculacionPrecoz.html`, `ProblemasEreccion.html`, `FaltaDeseo.html` | `/sexologia-clinica/` (provisorio, hasta tener sus páginas) |
+| `Mitos`, `Kamasutra`, `Afrodisiacos`, `Alcohol`, `Stress`, `Embarazo`, `TereceraEdad`, `Adolescente`, `EducacionSexual`, `Fobias` (`.html`) | `/sexologia-clinica/` |
+| `Hijos.html`, `Identidad.html` | `/psicoterapia-individual/` |
+| `TalleresyCharlas.html` | `/` |
 
 ## Pendientes
 
-- Redirecciones de las URLs del sitio anterior (`public/.htaccess`).
+- Cuando existan las páginas de Eyaculación rápida, Erección y Deseo: actualizar sus
+  redirecciones provisorias en `public/.htaccess`.
 - Fase 2: faltan las páginas de Deseo sexual, Dificultades de erección y Eyaculación rápida.
   Los textos de cada motivo viven en `src/data/motivos.ts`: al agregar `slug` y `pagina`,
   se genera `/sexologia-clinica/<slug>/` y el motivo pasa a ser enlace en Sexología clínica.
