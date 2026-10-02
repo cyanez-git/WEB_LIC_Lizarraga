@@ -11,14 +11,18 @@ interface Props {
   title: string;
   description: string;
   noindex?: boolean;
+  /** Términos de búsqueda de la página (etiqueta keywords; Google no la usa, otros buscadores sí). */
+  keywords?: string[];
+  /** Datos estructurados adicionales propios de la página. */
+  schema?: Record<string, unknown>[];
 }
-const { title, description, noindex = false } = Astro.props;
+const { title, description, noindex = false, keywords = [], schema: schemaPagina = [] } = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
 const ogImage = new URL('/og.jpg', SITE.url).href;
 
-const schema = {
-  '@context': 'https://schema.org',
+const persona = {
   '@type': 'Person',
+  '@id': `${SITE.url}/#silvina`,
   name: SITE.name,
   jobTitle: SITE.tagline.replaceAll(' · ', ', '),
   url: SITE.url,
@@ -43,7 +47,32 @@ const schema = {
   ],
   sameAs: SITE.redes.map((r) => r.href),
   knowsAbout: ['Psicoterapia individual', 'Terapia de pareja', 'Sexología clínica', 'Terapia sexual'],
-  contactPoint: { '@type': 'ContactPoint', contactType: 'WhatsApp', url: WHATSAPP_URL },
+  contactPoint: { '@type': 'ContactPoint', contactType: 'WhatsApp', url: WHATSAPP_URL, availableLanguage: 'es' },
+};
+
+// Atención presencial en Buenos Aires y online, en español, para Argentina y otros países.
+const servicio = {
+  '@type': 'Service',
+  '@id': `${SITE.url}/#servicio`,
+  name: 'Psicoterapia, terapia de pareja y sexología clínica',
+  serviceType: ['Psicoterapia individual', 'Terapia de pareja', 'Sexología clínica', 'Terapia sexual', 'Terapia online'],
+  provider: { '@id': `${SITE.url}/#silvina` },
+  availableLanguage: { '@type': 'Language', name: 'Español', alternateName: 'es' },
+  areaServed: [
+    { '@type': 'Country', name: 'Argentina' },
+    { '@type': 'Country', name: 'España' },
+    { '@type': 'Country', name: 'Estados Unidos' },
+    { '@type': 'Country', name: 'México' },
+    { '@type': 'Country', name: 'Uruguay' },
+    { '@type': 'Country', name: 'Chile' },
+    { '@type': 'Place', name: 'Latinoamérica' },
+  ],
+  availableChannel: { '@type': 'ServiceChannel', serviceUrl: WHATSAPP_URL, name: 'Atención online y presencial' },
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [persona, servicio, ...schemaPagina],
 };
 ---
 <!doctype html>
@@ -53,6 +82,7 @@ const schema = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex" />}
     <meta name="theme-color" content="#FBF8F3" />

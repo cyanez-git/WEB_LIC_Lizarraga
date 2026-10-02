@@ -13,9 +13,17 @@ export interface Seccion {
   bloques: string[];
 }
 
+export interface Condicion {
+  name: string;
+  alternateName: string[];
+}
+
 export interface PaginaMotivo {
   title: string;
   description: string;
+  /** Términos con los que la gente busca este motivo (cabecera y datos estructurados). */
+  keywords: string[];
+  condiciones: Condicion[];
   h1: string;
   intro: string[];
   secciones: Seccion[];
@@ -32,9 +40,11 @@ export const MOTIVOS: Motivo[] = [
     label: 'Deseo sexual',
     slug: 'deseo-sexual',
     pagina: {
-      title: 'Deseo sexual · Silvina Lizarraga',
+      title: 'Falta de deseo sexual · Silvina Lizarraga',
       description:
-        '“No tengo ganas” puede querer decir muchas cosas. Un espacio para comprender qué frena el deseo y qué necesita, sin frecuencias “correctas”.',
+        '“No tengo ganas” puede querer decir muchas cosas. Falta o disminución del deseo sexual: comprender qué lo frena y qué necesita, sin frecuencias “correctas”.',
+      keywords: ['falta de deseo sexual', 'bajo deseo sexual', 'deseo sexual hipoactivo', 'deseo responsivo', 'diferencias de deseo en la pareja', 'sexóloga online'],
+      condiciones: [{ name: 'Bajo deseo sexual', alternateName: ['Falta de deseo sexual', 'Deseo sexual hipoactivo', 'Disminución del deseo sexual'] }],
       h1: '“No tengo ganas” puede querer decir muchas cosas',
       intro: [
         'La disminución o ausencia de deseo sexual es uno de los motivos de consulta más frecuentes en sexología.',
@@ -113,9 +123,11 @@ export const MOTIVOS: Motivo[] = [
     label: 'Dificultades de erección',
     slug: 'dificultades-de-ereccion',
     pagina: {
-      title: 'Dificultades de erección · Silvina Lizarraga',
+      title: 'Dificultades de erección y disfunción eréctil · Silvina Lizarraga',
       description:
-        'Que una erección falle no significa necesariamente una disfunción. Una mirada integral que considera el cuerpo, las emociones y el vínculo.',
+        'Que una erección falle no significa necesariamente una disfunción eréctil. Una mirada integral que considera el cuerpo, las emociones y el vínculo.',
+      keywords: ['disfunción eréctil', 'problemas de erección', 'pérdida de erección', 'ansiedad de desempeño', 'sexóloga online'],
+      condiciones: [{ name: 'Disfunción eréctil', alternateName: ['Dificultades de erección', 'Problemas de erección'] }],
       h1: 'Que una erección falle no significa necesariamente que exista una disfunción',
       intro: [
         'Que en alguna ocasión una erección no aparezca, se pierda o tenga menos firmeza de la esperada no significa automáticamente que exista una disfunción eréctil.',
@@ -195,9 +207,11 @@ export const MOTIVOS: Motivo[] = [
     label: 'Eyaculación rápida',
     slug: 'eyaculacion-rapida',
     pagina: {
-      title: 'Eyaculación rápida · Silvina Lizarraga',
+      title: 'Eyaculación rápida o precoz · Silvina Lizarraga',
       description:
-        '¿Rápida para quién? Un espacio para comprender la eyaculación rápida más allá del cronómetro: regular no es lo mismo que controlar.',
+        '¿Rápida para quién? Un espacio para comprender la eyaculación rápida o precoz más allá del cronómetro: regular no es lo mismo que controlar.',
+      keywords: ['eyaculación precoz', 'eyaculación rápida', 'eyaculación prematura', 'controlar la eyaculación', 'sexóloga online'],
+      condiciones: [{ name: 'Eyaculación precoz', alternateName: ['Eyaculación rápida', 'Eyaculación prematura'] }],
       h1: '¿Rápida para quién?',
       intro: [
         'Cuando una persona dice *“acabo demasiado rápido”*, una de las primeras preguntas que aparece es:',
@@ -294,6 +308,8 @@ export const MOTIVOS: Motivo[] = [
       title: 'Eyaculación retardada · Silvina Lizarraga',
       description:
         'Cuando “llegar” se vuelve una obligación. Un espacio para comprender la dificultad para eyacular, con una mirada que integra lo médico, lo emocional y lo vincular.',
+      keywords: ['eyaculación retardada', 'eyaculación tardía', 'dificultad para eyacular', 'no puedo eyacular', 'sexóloga online'],
+      condiciones: [{ name: 'Eyaculación retardada', alternateName: ['Eyaculación tardía', 'Dificultad para eyacular'] }],
       h1: 'Cuando “llegar” empieza a convertirse en una obligación',
       intro: [
         'Algunas personas consultan porque necesitan mucho tiempo para eyacular, porque solamente pueden hacerlo en determinadas circunstancias o porque durante un encuentro sexual no logran hacerlo.',
@@ -368,9 +384,11 @@ export const MOTIVOS: Motivo[] = [
     label: 'Dificultades relacionadas con el orgasmo',
     slug: 'dificultades-con-el-orgasmo',
     pagina: {
-      title: 'Dificultades relacionadas con el orgasmo · Silvina Lizarraga',
+      title: 'Dificultades con el orgasmo (anorgasmia) · Silvina Lizarraga',
       description:
-        '¿Siempre tiene que haber un orgasmo? Un espacio para comprender qué está sucediendo, sin explicaciones automáticas y con una mirada más amplia sobre el placer.',
+        '¿Siempre tiene que haber un orgasmo? Dificultades con el orgasmo y anorgasmia: comprender qué está sucediendo, sin explicaciones automáticas.',
+      keywords: ['anorgasmia', 'dificultad para llegar al orgasmo', 'no llego al orgasmo', 'trastorno del orgasmo', 'sexóloga online'],
+      condiciones: [{ name: 'Anorgasmia', alternateName: ['Dificultades con el orgasmo', 'Trastorno del orgasmo'] }],
       h1: '¿Siempre tiene que haber un orgasmo?',
       intro: [
         'El orgasmo suele ocupar un lugar privilegiado dentro de nuestra idea de cómo “debería” ser una relación sexual.',
@@ -433,9 +451,11 @@ export const MOTIVOS: Motivo[] = [
     label: 'Dolor y dificultades en la penetración',
     slug: 'dolor-en-la-penetracion',
     pagina: {
-      title: 'Dolor y dificultades en la penetración · Silvina Lizarraga',
+      title: 'Dolor en la penetración: dispareunia y vaginismo · Silvina Lizarraga',
       description:
-        'El dolor sexual no es algo que haya que aprender a soportar. Un espacio para comprender qué está sucediendo, con evaluación integral y sin juicios.',
+        'El dolor sexual no es algo que haya que aprender a soportar. Dispareunia y vaginismo: un espacio para comprender qué está sucediendo, sin juicios.',
+      keywords: ['dispareunia', 'vaginismo', 'dolor en las relaciones sexuales', 'dolor en la penetración', 'dolor sexual', 'sexóloga online'],
+      condiciones: [{ name: 'Dispareunia', alternateName: ['Dolor en la penetración', 'Dolor en las relaciones sexuales'] }, { name: 'Vaginismo', alternateName: ['Dificultad para la penetración'] }],
       h1: 'El dolor no es algo que haya que aprender a soportar',
       intro: [
         'Algunas personas sienten dolor, ardor, molestia o una sensación intensa de tensión durante determinados encuentros sexuales.',

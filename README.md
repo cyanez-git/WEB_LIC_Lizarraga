@@ -67,6 +67,18 @@ y probadas en Apache.
 | `Hijos.html`, `Identidad.html` | `/psicoterapia-individual/` |
 | `TalleresyCharlas.html` | `/` |
 
+## SEO
+
+Todo en la cabecera de cada página (no cambia el texto visible):
+
+- **Título y descripción**: en cada página (`title` / `description` de `<Base>`); en los motivos
+  de consulta, en `src/data/motivos.ts`. Incluyen los términos clínicos que la gente busca
+  (eyaculación precoz, disfunción eréctil, dispareunia, vaginismo, anorgasmia) y "online".
+- **Datos estructurados** (`src/layouts/Base.astro`): la profesional, el servicio (presencial y
+  online, en español, para Argentina, España, Estados Unidos y Latinoamérica) y, en cada motivo,
+  la condición con sus otros nombres (`condiciones` en `motivos.ts`).
+- **Palabras clave** (`keywords`): Google no las usa; se mantienen como referencia.
+
 ## Medición (Google Analytics 4)
 
 - Propiedad existente "Sexualidad-activa - GA4", ID `G-GR6W7H8X7Q` (en `src/data/site.ts`).

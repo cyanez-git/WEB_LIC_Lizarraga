@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import Bloques from '../../components/Bloques.astro';
 import ContactBlock from '../../components/ContactBlock.astro';
 import { MOTIVOS, motivoHref, type Motivo, type PaginaMotivo } from '../../data/motivos';
+import { SITE } from '../../data/site';
 
 export function getStaticPaths() {
   return MOTIVOS.filter((m) => m.slug && m.pagina).map((m) => ({ params: { slug: m.slug }, props: { motivo: m } }));
@@ -13,8 +14,21 @@ const pagina = motivo.pagina as PaginaMotivo;
 const otros = MOTIVOS.filter((m) => m !== motivo && m.pagina);
 // Las franjas alternan fondo empezando en hueso; el cierre toma el fondo opuesto a la última.
 const cierreAlt = pagina.secciones.length % 2 === 0;
+
+// Le indica a Google de qué condición trata la página y sus otros nombres.
+const schemaPagina = [
+  {
+    '@type': 'MedicalWebPage',
+    url: new URL(Astro.url.pathname, SITE.url).href,
+    name: pagina.title,
+    inLanguage: 'es',
+    author: { '@id': `${SITE.url}/#silvina` },
+    about: pagina.condiciones.map((c) => ({ '@type': 'MedicalCondition', name: c.name, alternateName: c.alternateName })),
+    keywords: pagina.keywords.join(', '),
+  },
+];
 ---
-<Base title={pagina.title} description={pagina.description}>
+<Base title={pagina.title} description={pagina.description} keywords={pagina.keywords} schema={schemaPagina}>
   <section class="page-hero">
     <div class="container">
       <nav class="volver" aria-label="Ubicación">
