@@ -67,8 +67,19 @@ y probadas en Apache.
 | `Hijos.html`, `Identidad.html` | `/psicoterapia-individual/` |
 | `TalleresyCharlas.html` | `/` |
 
+## Medición (Google Analytics 4)
+
+- Propiedad existente "Sexualidad-activa - GA4", ID `G-GR6W7H8X7Q` (en `src/data/site.ts`).
+- Modo de consentimiento: sin cookies de medición hasta que la persona acepta el aviso
+  (`src/components/ConsentBanner.astro`). Publicidad siempre desactivada.
+- Solo mide en `sexualidad-activa.com` (no en el subdominio de prueba ni en local).
+- Cada toque en WhatsApp envía el evento `whatsapp_click` con `ubicacion`
+  (`flotante` o `contacto`) y `pagina`.
+- En Analytics: marcar `whatsapp_click` como **evento clave** (Administrar → Eventos) y
+  vincular la propiedad con Search Console y con Google Ads.
+
 ## Pendientes
 
-- Analytics (GA4), aviso de cookies y política de privacidad: esperando el ID de medición.
+- Revisión de la política de privacidad (`src/pages/privacidad.astro`) por Silvina o asesoría legal.
 - Motivos de consulta: los textos viven en `src/data/motivos.ts`; al agregar uno con `slug`
   y `pagina` se genera `/sexologia-clinica/<slug>/` automáticamente.

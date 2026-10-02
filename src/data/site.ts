@@ -6,6 +6,7 @@ export const SITE = {
   // Espacios no separables para que cada lugar no se parta en dos renglones.
   consultorios: ['CABA\u00A0–\u00A0Barrio\u00A0Norte', 'San\u00A0Isidro'],
   redes: [{ label: 'Instagram', href: 'https://www.instagram.com/lic.silvinalizarraga/' }],
+  ga4Id: 'G-GR6W7H8X7Q',
   whatsappDisplay: '+54 9 11 2254-0922',
   whatsappNumber: '5491122540922',
 };

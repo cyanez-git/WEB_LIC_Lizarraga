@@ -3,6 +3,8 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import Analytics from '../components/Analytics.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
 import { SITE, WHATSAPP_URL } from '../data/site';
 
 interface Props {
@@ -69,6 +71,7 @@ const schema = {
 
     <link rel="sitemap" href="/sitemap-index.xml" />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <Analytics />
     <slot name="head" />
   </head>
   <body>
@@ -79,5 +82,6 @@ const schema = {
     </main>
     <Footer />
     <WhatsAppFloat />
+    <ConsentBanner />
   </body>
 </html>

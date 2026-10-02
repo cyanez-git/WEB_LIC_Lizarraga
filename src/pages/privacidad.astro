@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+<Base
+  title="Política de privacidad · Silvina Lizarraga"
+  description="Qué datos recoge este sitio, para qué se usan las cookies de medición y cómo ejercer tus derechos sobre tus datos personales."
+>
+  <section class="page-hero">
+    <div class="container">
+      <h1><span class="eyebrow">Privacidad</span>Política de privacidad</h1>
+      <div class="reading text-flow">
+        <p class="lead">Este sitio no tiene formularios ni registro de usuarios. Solo usa, si lo aceptás, cookies de medición para saber cómo se usa y mejorarlo.</p>
+        <p><em>Última actualización: octubre de 2026.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><hr class="page-divider" /></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="reading text-flow">
+        <h2>Responsable</h2>
+        <p>{SITE.name}, Licenciada en Psicología ({SITE.matriculas.join(' · ')}). Contacto: WhatsApp {SITE.whatsappDisplay}.</p>
+
+        <h2>Qué datos se recogen</h2>
+        <p>Este sitio no pide nombre, correo ni ningún otro dato personal.</p>
+        <p><strong>Medición de visitas.</strong> Si aceptás las cookies, el sitio usa Google Analytics (Google LLC) para conocer de forma agregada qué páginas se visitan, desde qué tipo de dispositivo, desde qué país o ciudad aproximada y cómo se llegó al sitio. Esta información no se usa para publicidad ni para identificar a las personas que visitan el sitio. Si no aceptás, Google Analytics funciona sin cookies y solo recibe información mínima y sin identificadores.</p>
+        <p><strong>WhatsApp.</strong> Al tocar un botón de WhatsApp se abre ese servicio, que pertenece a Meta Platforms. Lo que escribas a partir de ese momento se rige por las condiciones de WhatsApp. El sitio solo registra que se tocó el botón, sin ningún contenido del mensaje.</p>
+
+        <h2>Cookies</h2>
+        <ul class="lista-simple">
+          <li><strong>_ga y _ga_*</strong> (Google Analytics): distinguen visitas de forma anónima. Duran hasta 2 años y solo se guardan si las aceptás.</li>
+          <li><strong>consentimiento-cookies</strong> (almacenamiento del navegador): recuerda tu elección para no volver a preguntarte.</li>
+        </ul>
+        <p>Podés cambiar tu elección en cualquier momento desde <a class="text-link" href="#" data-consent-abrir>Preferencias de cookies</a>, o borrar las cookies desde la configuración de tu navegador.</p>
+
+        <h2>Tus derechos</h2>
+        <p>Podés solicitar el acceso, la rectificación o la supresión de tus datos personales escribiendo por WhatsApp al {SITE.whatsappDisplay}. Si residís en la Unión Europea, también podés ejercer los derechos que te reconoce el Reglamento General de Protección de Datos (RGPD).</p>
+        <p>La Agencia de Acceso a la Información Pública, en su carácter de órgano de control de la Ley N.º 25.326, tiene la atribución de atender las denuncias y reclamos que interpongan quienes resulten afectados en sus derechos por incumplimiento de las normas vigentes en materia de protección de datos personales.</p>
+      </div>
+    </div>
+  </section>
+</Base>
