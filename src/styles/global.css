@@ -409,8 +409,13 @@ a { color: inherit; }
 }
 
 /* ---------- Recorrido profesional (Sobre mí) ---------- */
+/* Título + foto: acompaña el scroll solo si entra completo en la pantalla. */
+.split__aside--retrato { position: static; }
+@media (min-width: 900px) and (min-height: 820px) {
+  .split__aside--retrato { position: sticky; }
+}
 .retrato {
-  display: block; width: 100%; max-width: 340px; height: auto;
+  display: block; width: 100%; max-width: 300px; height: auto;
   aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 25%;
   border-radius: var(--radius); margin-top: clamp(32px, 4vw, 48px);
 }
