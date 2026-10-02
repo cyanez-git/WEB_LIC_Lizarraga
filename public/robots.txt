@@ -1,3 +1,4 @@
+# Todos los buscadores y robots de IA (búsqueda y entrenamiento) pueden leer el sitio.
 User-agent: *
 Allow: /
 

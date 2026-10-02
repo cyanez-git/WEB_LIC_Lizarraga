@@ -5,6 +5,8 @@
 
 Options -Indexes
 DirectoryIndex index.html
+AddDefaultCharset utf-8
+AddCharset utf-8 .txt .xml .html .css .js
 ErrorDocument 404 /404.html
 
 <IfModule mod_rewrite.c>

@@ -78,6 +78,10 @@ Todo en la cabecera de cada página (no cambia el texto visible):
   online, en español, para Argentina, España, Estados Unidos y Latinoamérica) y, en cada motivo,
   la condición con sus otros nombres (`condiciones` en `motivos.ts`).
 - **Palabras clave** (`keywords`): Google no las usa; se mantienen como referencia.
+- **Buscadores con IA**: `robots.txt` permite todos los robots (búsqueda y entrenamiento, decisión
+  de Silvina). `/llms.txt` resume el sitio para asistentes de IA; se genera desde
+  `src/pages/llms.txt.ts` con los datos del sitio. Registrar el sitio también en Bing Webmaster
+  Tools (ChatGPT y Copilot usan Bing).
 
 ## Medición (Google Analytics 4)
 
