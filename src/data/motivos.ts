@@ -38,7 +38,7 @@ export const MOTIVOS: Motivo[] = [
       h1: '“No tengo ganas” puede querer decir muchas cosas',
       intro: [
         'La disminución o ausencia de deseo sexual es uno de los motivos de consulta más frecuentes en sexología.',
-        'Pero cuando alguien dice *“ya no tengo ganas”*, para mí esa frase es el comienzo de una exploración, no un diagnóstico.',
+        'Pero cuando alguien dice *“ya no tengo ganas”*, para mí esa frase es el comienzo de una exploración.',
         'Necesitamos comprender qué cambió, cuándo comenzó, cómo era anteriormente su sexualidad, qué sucede cuando aparece la posibilidad de un encuentro y, especialmente, **qué significa para esa persona no tener deseo**.',
       ],
       secciones: [
@@ -155,7 +155,7 @@ export const MOTIVOS: Motivo[] = [
           ],
         },
         {
-          titulo: 'La erección no es un examen',
+          titulo: 'La erección no es una medida',
           bloques: [
             'dest:Una erección es una respuesta sexual. No es una medida del deseo, de la masculinidad ni del valor de una persona.',
             'Y una relación sexual es mucho más que una penetración.',
