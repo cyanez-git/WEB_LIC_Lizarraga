@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHeroImage from '../components/PageHeroImage.astro';
+import heroImg from '../assets/img/contacto-puerta.webp';
 import { SITE } from '../data/site';
 import ContactBlock from '../components/ContactBlock.astro';
 ---
@@ -7,9 +9,10 @@ import ContactBlock from '../components/ContactBlock.astro';
   title="Contacto · Silvina Lizarraga"
   description="¿Querés contarme qué te está pasando? Podés escribirme por WhatsApp. Atención online y presencial en CABA (Barrio Norte) y San Isidro."
 >
-  <section class="page-hero">
+  <section class="page-hero page-hero--media">
     <div class="container">
       <ContactBlock headingLevel="h1" eyebrow="Contacto" />
+      <PageHeroImage src={heroImg} encuadre="65% 45%" />
     </div>
   </section>
 

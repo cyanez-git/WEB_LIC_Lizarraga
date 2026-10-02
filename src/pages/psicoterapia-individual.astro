@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHeroImage from '../components/PageHeroImage.astro';
+import heroImg from '../assets/img/psicoterapia-hilo.webp';
 import ServiceCta from '../components/ServiceCta.astro';
 ---
 <Base
@@ -7,15 +9,18 @@ import ServiceCta from '../components/ServiceCta.astro';
   description="Psicoterapia individual presencial y online. Un espacio para comprender lo que estás viviendo y acercarte a aquello que sentís. No hace falta llegar con todo claro."
   keywords={['psicóloga', 'psicóloga online', 'psicoterapia', 'terapia online en español', 'ansiedad', 'angustia']}
 >
-  <section class="page-hero">
+  <section class="page-hero page-hero--media">
     <div class="container">
-      <h1><span class="eyebrow">Psicoterapia individual</span>Hay momentos en los que algo de nuestra vida necesita ser mirado de otra manera</h1>
-      <div class="reading text-flow">
-        <p class="lead">A veces sabemos claramente qué nos está pasando. Otras, simplemente sentimos que algo no está bien.</p>
-        <p>Puede aparecer como angustia, ansiedad, tristeza, enojo, dificultades en nuestros vínculos, una situación que se repite, una decisión que no podemos tomar o la sensación de estar atravesando un momento de nuestra vida para el que las herramientas que siempre nos sirvieron ya no alcanzan.</p>
-        <p class="destacado">También puede ocurrir que podamos explicar perfectamente por qué nos pasa algo y, sin embargo, comprenderlo no sea suficiente para cambiar cómo nos sentimos.</p>
-        <p>La terapia puede ofrecer un espacio para detenernos en eso que está sucediendo, ponerlo en palabras y también permitirnos entrar en contacto con emociones que muchas veces intentamos controlar, evitar o explicar antes de poder sentirlas.</p>
+      <div>
+        <h1><span class="eyebrow">Psicoterapia individual</span>Hay momentos en los que algo de nuestra vida necesita ser mirado de otra manera</h1>
+        <div class="reading text-flow">
+          <p class="lead">A veces sabemos claramente qué nos está pasando. Otras, simplemente sentimos que algo no está bien.</p>
+          <p>Puede aparecer como angustia, ansiedad, tristeza, enojo, dificultades en nuestros vínculos, una situación que se repite, una decisión que no podemos tomar o la sensación de estar atravesando un momento de nuestra vida para el que las herramientas que siempre nos sirvieron ya no alcanzan.</p>
+          <p class="destacado">También puede ocurrir que podamos explicar perfectamente por qué nos pasa algo y, sin embargo, comprenderlo no sea suficiente para cambiar cómo nos sentimos.</p>
+          <p>La terapia puede ofrecer un espacio para detenernos en eso que está sucediendo, ponerlo en palabras y también permitirnos entrar en contacto con emociones que muchas veces intentamos controlar, evitar o explicar antes de poder sentirlas.</p>
+        </div>
       </div>
+      <PageHeroImage src={heroImg} encuadre="50% 22%" />
     </div>
   </section>
 

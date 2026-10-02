@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHeroImage from '../components/PageHeroImage.astro';
+import heroImg from '../assets/img/pareja-piedras.webp';
 import ServiceCta from '../components/ServiceCta.astro';
 ---
 <Base
@@ -7,15 +9,18 @@ import ServiceCta from '../components/ServiceCta.astro';
   description="Terapia de pareja presencial y online. Cuando algo entre dos empieza a necesitar otro espacio: comprender qué sucede entre ambos y qué siente y necesita cada uno."
   keywords={['terapia de pareja', 'terapia de pareja online', 'crisis de pareja', 'psicóloga de parejas', 'terapia focalizada en las emociones', 'sexualidad en la pareja']}
 >
-  <section class="page-hero">
+  <section class="page-hero page-hero--media">
     <div class="container">
-      <h1><span class="eyebrow">Terapia de pareja</span>Cuando algo entre dos empieza a necesitar otro espacio</h1>
-      <div class="reading text-flow">
-        <p class="lead">Hay momentos en los que una pareja siente que algo cambió. A veces ocurre después de una crisis concreta; otras, el distanciamiento fue sucediendo de a poco y resulta difícil identificar cuándo empezó.</p>
-        <p>Pueden aparecer discusiones que se repiten, silencios, resentimiento, distancia emocional, dificultades para comunicarse o la sensación de que cada intento por acercarse termina generando un nuevo desencuentro.</p>
-        <p class="destacado">No siempre se trata de haber dejado de quererse. A veces, simplemente, la pareja ya no encuentra la manera de encontrarse.</p>
-        <p>La terapia de pareja ofrece un espacio para comprender qué está sucediendo entre ambos, pero también para acercarse a aquello que cada uno siente y que muchas veces no está pudiendo expresar, o el otro no está pudiendo escuchar.</p>
+      <div>
+        <h1><span class="eyebrow">Terapia de pareja</span>Cuando algo entre dos empieza a necesitar otro espacio</h1>
+        <div class="reading text-flow">
+          <p class="lead">Hay momentos en los que una pareja siente que algo cambió. A veces ocurre después de una crisis concreta; otras, el distanciamiento fue sucediendo de a poco y resulta difícil identificar cuándo empezó.</p>
+          <p>Pueden aparecer discusiones que se repiten, silencios, resentimiento, distancia emocional, dificultades para comunicarse o la sensación de que cada intento por acercarse termina generando un nuevo desencuentro.</p>
+          <p class="destacado">No siempre se trata de haber dejado de quererse. A veces, simplemente, la pareja ya no encuentra la manera de encontrarse.</p>
+          <p>La terapia de pareja ofrece un espacio para comprender qué está sucediendo entre ambos, pero también para acercarse a aquello que cada uno siente y que muchas veces no está pudiendo expresar, o el otro no está pudiendo escuchar.</p>
+        </div>
       </div>
+      <PageHeroImage src={heroImg} encuadre="40% 72%" />
     </div>
   </section>
 

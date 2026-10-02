@@ -324,6 +324,14 @@ a { color: inherit; }
 .page-hero h1 { font-size: var(--fs-h1-page); max-width: 20ch; margin-bottom: 30px; }
 .page-hero h1 .eyebrow { margin-bottom: 26px; }
 .page-hero .lead { max-width: var(--reading); }
+/* Hero de las páginas del menú con imagen a la derecha (en celulares, debajo y apaisada). */
+.page-hero--media .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 380px); gap: 48px clamp(48px, 6vw, 96px); align-items: start; }
+.page-hero__media img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); }
+.page-hero--media .contact { grid-template-columns: 1fr; align-items: start; }
+@media (max-width: 899px) {
+  .page-hero--media .container { grid-template-columns: 1fr; gap: 36px; }
+  .page-hero__media img { aspect-ratio: 16 / 10; object-position: var(--encuadre); }
+}
 .page-divider { border: 0; border-top: 1px solid var(--line); margin: 0; }
 
 .faq { background: var(--bg-alt); border-radius: var(--radius); padding: clamp(28px, 4vw, 52px); }

@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHeroImage from '../components/PageHeroImage.astro';
+import heroImg from '../assets/img/sexologia-dunas.webp';
 import ServiceCta from '../components/ServiceCta.astro';
 import { MOTIVOS, motivoHref } from '../data/motivos';
 ---
@@ -8,16 +10,19 @@ import { MOTIVOS, motivoHref } from '../data/motivos';
   description="Terapia sexual presencial y online para dificultades con el deseo, la erección, la eyaculación precoz o retardada, el orgasmo o el dolor en la penetración."
   keywords={['sexóloga', 'sexóloga online', 'terapia sexual', 'terapia sexual online', 'sexología clínica', 'eyaculación precoz', 'disfunción eréctil', 'falta de deseo sexual', 'anorgasmia', 'vaginismo', 'dispareunia']}
 >
-  <section class="page-hero">
+  <section class="page-hero page-hero--media">
     <div class="container">
-      <h1><span class="eyebrow">Sexología clínica</span>Cuando algo en nuestra sexualidad empieza a preocuparnos</h1>
-      <div class="reading text-flow">
-        <p class="lead">Una dificultad sexual muchas veces se vive como si hubiera una parte de nosotros que dejó de funcionar como debería.</p>
-        <p>Aparecen expectativas, comparaciones, frustración, vergüenza, miedo a que vuelva a suceder y una atención cada vez mayor puesta en aquello que “tendría que pasar”.</p>
-        <p class="destacado">Pero una persona es mucho más que una respuesta sexual que no está funcionando como esperaba.</p>
-        <p>Por eso, cuando alguien llega diciendo “tengo un problema sexual”, para mí el trabajo no comienza solamente preguntando qué ocurre durante una relación sexual.</p>
-        <p>Necesito conocer a la persona que está viviendo esa dificultad.</p>
+      <div>
+        <h1><span class="eyebrow">Sexología clínica</span>Cuando algo en nuestra sexualidad empieza a preocuparnos</h1>
+        <div class="reading text-flow">
+          <p class="lead">Una dificultad sexual muchas veces se vive como si hubiera una parte de nosotros que dejó de funcionar como debería.</p>
+          <p>Aparecen expectativas, comparaciones, frustración, vergüenza, miedo a que vuelva a suceder y una atención cada vez mayor puesta en aquello que “tendría que pasar”.</p>
+          <p class="destacado">Pero una persona es mucho más que una respuesta sexual que no está funcionando como esperaba.</p>
+          <p>Por eso, cuando alguien llega diciendo “tengo un problema sexual”, para mí el trabajo no comienza solamente preguntando qué ocurre durante una relación sexual.</p>
+          <p>Necesito conocer a la persona que está viviendo esa dificultad.</p>
+        </div>
       </div>
+      <PageHeroImage src={heroImg} encuadre="50% 40%" />
     </div>
   </section>
 
