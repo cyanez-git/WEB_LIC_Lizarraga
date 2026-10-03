@@ -1,0 +1,5 @@
+# Todos los buscadores y robots de IA (búsqueda y entrenamiento) pueden leer el sitio.
+User-agent: *
+Allow: /
+
+Sitemap: https://sexualidad-activa.com/sitemap-index.xml

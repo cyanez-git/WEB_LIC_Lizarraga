@@ -1,0 +1,35 @@
+---
+// Renderiza los bloques de texto de src/data/motivos.ts.
+interface Props {
+  bloques: string[];
+}
+const { bloques } = Astro.props;
+
+const inline = (s: string) =>
+  s
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/\[(.+?)\]\((.+?)\)/g, '<a class="text-link" href="$2">$1</a>');
+
+const items = bloques.map((b) => {
+  if (b.startsWith('voz:')) return { tipo: 'voz', html: inline(b.slice(4)) };
+  if (b.startsWith('dest:')) return { tipo: 'dest', html: inline(b.slice(5)) };
+  if (b.startsWith('ciclo:')) return { tipo: 'ciclo', pasos: b.slice(6).split('|').map(inline) };
+  return { tipo: 'p', html: inline(b) };
+});
+---
+{items.map((it) =>
+  it.tipo === 'voz' ? <p class="voz" set:html={it.html} />
+  : it.tipo === 'dest' ? <p class="destacado" set:html={it.html} />
+  : it.tipo === 'ciclo' ? (
+    <p class="ciclo">
+      {it.pasos!.map((paso, i) => (
+        <>
+          {i > 0 && <span class="ciclo__flecha" aria-hidden="true">→</span>}
+          <span class="ciclo__paso" set:html={paso} />
+        </>
+      ))}
+    </p>
+  )
+  : <p set:html={it.html} />
+)}

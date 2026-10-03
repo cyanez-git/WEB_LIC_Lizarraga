@@ -1,0 +1,76 @@
+# ==========================================================================
+# sexualidad-activa.com — configuración Apache (cPanel / Atlantica Digital)
+# Este archivo va en la raíz de public_html junto con el resto del sitio.
+# ==========================================================================
+
+Options -Indexes
+DirectoryIndex index.html
+AddDefaultCharset utf-8
+AddCharset utf-8 .txt .xml .html .css .js
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # ------------------------------------------------------------------------
+  # Redirecciones del sitio anterior (Mobirise). Permanentes (301) y sin
+  # distinguir mayúsculas. Ver el inventario en README.md.
+  # ------------------------------------------------------------------------
+
+  # Equivalente directo
+  # Solo si se pidió explícitamente /index.html (evita el bucle con DirectoryIndex)
+  RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+  RewriteRule ^index\.html$ https://sexualidad-activa.com/ [NC,R=301,L]
+  RewriteRule ^EyaculacionRetardada\.html$ https://sexualidad-activa.com/sexologia-clinica/eyaculacion-retardada/ [NC,R=301,L]
+  RewriteRule ^Anorgasmia\.html$ https://sexualidad-activa.com/sexologia-clinica/dificultades-con-el-orgasmo/ [NC,R=301,L]
+  RewriteRule ^Dispareunia\.html$ https://sexualidad-activa.com/sexologia-clinica/dolor-en-la-penetracion/ [NC,R=301,L]
+  RewriteRule ^Vaginismo\.html$ https://sexualidad-activa.com/sexologia-clinica/dolor-en-la-penetracion/ [NC,R=301,L]
+  RewriteRule ^CrisisdePareja\.html$ https://sexualidad-activa.com/terapia-de-pareja/ [NC,R=301,L]
+  RewriteRule ^TerapiaOnLine\.html$ https://sexualidad-activa.com/contacto/ [NC,R=301,L]
+  RewriteRule ^PreguntasFrecuentes\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^EyaculacionPrecoz\.html$ https://sexualidad-activa.com/sexologia-clinica/eyaculacion-rapida/ [NC,R=301,L]
+  RewriteRule ^ProblemasEreccion\.html$ https://sexualidad-activa.com/sexologia-clinica/dificultades-de-ereccion/ [NC,R=301,L]
+  RewriteRule ^FaltaDeseo\.html$ https://sexualidad-activa.com/sexologia-clinica/deseo-sexual/ [NC,R=301,L]
+
+  # Artículos generales sin equivalente: la página más cercana
+  RewriteRule ^Mitos\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^Kamasutra\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^Afrodisiacos\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^Alcohol\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^Stress\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^Embarazo\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^TereceraEdad\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^Adolescente\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^EducacionSexual\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^Fobias\.html$ https://sexualidad-activa.com/sexologia-clinica/ [NC,R=301,L]
+  RewriteRule ^Hijos\.html$ https://sexualidad-activa.com/psicoterapia-individual/ [NC,R=301,L]
+  RewriteRule ^Identidad\.html$ https://sexualidad-activa.com/psicoterapia-individual/ [NC,R=301,L]
+  RewriteRule ^TalleresyCharlas\.html$ https://sexualidad-activa.com/ [NC,R=301,L]
+
+  # www -> sin www
+  RewriteCond %{HTTP_HOST} ^www\.sexualidad-activa\.com$ [NC]
+  RewriteRule ^ https://sexualidad-activa.com%{REQUEST_URI} [L,R=301]
+
+  # Forzar HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+</IfModule>
+
+# Compresión
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/xml application/xml text/plain
+</IfModule>
+
+# Caché: imágenes, fuentes, CSS y JS 30 días (los de /_astro/ cambian de nombre en cada versión).
+<IfModule mod_headers.c>
+  <FilesMatch "\.(avif|webp|jpg|jpeg|png|svg|woff2|css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

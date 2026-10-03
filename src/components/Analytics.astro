@@ -1,0 +1,33 @@
+---
+// Google Analytics 4 con modo de consentimiento: no se guardan cookies de
+// medición hasta que la persona acepta en el aviso (ver ConsentBanner.astro).
+// Solo mide en el dominio de producción (no en pruebas ni en local).
+import { SITE } from '../data/site';
+const id = SITE.ga4Id;
+---
+<script is:inline define:vars={{ id, host: new URL(SITE.url).hostname }}>
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  if (location.hostname === host) {
+    var eleccion = null;
+    try { eleccion = localStorage.getItem('consentimiento-cookies'); } catch (e) {}
+    gtag('consent', 'default', {
+      analytics_storage: eleccion === 'aceptado' ? 'granted' : 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500,
+    });
+    gtag('js', new Date());
+    gtag('config', id);
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+    document.head.appendChild(s);
+  }
+  // Cada toque en un enlace de WhatsApp se registra como evento "whatsapp_click".
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="wa.me/"]');
+    if (a) gtag('event', 'whatsapp_click', { ubicacion: a.dataset.wa || 'otro', pagina: location.pathname });
+  });
+</script>

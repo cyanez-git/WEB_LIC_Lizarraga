@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeroImage from '../components/PageHeroImage.astro';
+import heroImg from '../assets/img/contacto-puerta.webp';
+import { SITE } from '../data/site';
+import ContactBlock from '../components/ContactBlock.astro';
+---
+<Base
+  title="Contacto · Silvina Lizarraga"
+  description="¿Querés contarme qué te está pasando? Podés escribirme por WhatsApp. Atención online y presencial en CABA (Barrio Norte) y San Isidro."
+>
+  <section class="page-hero page-hero--media">
+    <div class="container">
+      <ContactBlock headingLevel="h1" eyebrow="Contacto" />
+      <PageHeroImage src={heroImg} soloEscritorio />
+    </div>
+  </section>
+
+  <div class="container"><hr class="page-divider" /></div>
+
+  <section class="section section--tight" aria-labelledby="modalidad-title">
+    <div class="container modalidad">
+      <h2 id="modalidad-title">Modalidad de atención</h2>
+      <div class="reading">
+        <ul class="modalidad__tags">
+          <li>Online</li>
+          <li>Presencial</li>
+        </ul>
+        <p>Atención <strong>online y presencial</strong>, según disponibilidad.</p>
+        <p>Consultorios en <strong>{SITE.consultorios[0]}</strong> y <strong>{SITE.consultorios[1]}</strong>.</p>
+      </div>
+    </div>
+  </section>
+</Base>

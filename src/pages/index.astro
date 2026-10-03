@@ -1,0 +1,132 @@
+---
+import { Picture } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+import ContactBlock from '../components/ContactBlock.astro';
+import heroImg from '../assets/img/hero-cortina-luz.webp';
+
+const areas = [
+  {
+    num: '01',
+    title: 'Psicoterapia individual',
+    text: 'Un espacio para comprender lo que estás viviendo, acercarte a aquello que sentís y quizá todavía resulta difícil poner en palabras.',
+    href: '/psicoterapia-individual/',
+  },
+  {
+    num: '02',
+    title: 'Terapia de pareja',
+    text: 'Cuando algo entre dos empieza a generar distancia, conflicto o sufrimiento, un espacio terapéutico puede ayudar a comprender qué está sucediendo.',
+    href: '/terapia-de-pareja/',
+  },
+  {
+    num: '03',
+    title: 'Sexología clínica',
+    text: 'Cuando algo relacionado con la sexualidad, el deseo, el placer o la respuesta sexual genera preocupación, malestar o preguntas que necesitan ser abordadas.',
+    href: '/sexologia-clinica/',
+  },
+];
+---
+<Base
+  title="Silvina Lizarraga · Psicóloga, sexóloga clínica y terapeuta de pareja · Buenos Aires y online"
+  description="Psicoterapia individual, terapia de pareja y sexología clínica. Atención presencial en Barrio Norte (CABA) y San Isidro, y online en español."
+  keywords={['psicóloga', 'sexóloga', 'sexóloga clínica', 'terapia de pareja', 'terapia sexual', 'psicóloga online', 'sexóloga online', 'terapia online en español', 'Barrio Norte', 'San Isidro', 'Buenos Aires']}
+>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <div class="hero__content fade-in">
+        <p class="eyebrow">Un espacio para vos</p>
+        <h1 id="hero-title">Hay momentos en los que necesitamos un espacio para encontrarnos con lo que <em>nos está pasando.</em></h1>
+        <p class="lead">Poder hablarlo, comprenderlo y también conectarnos con lo que sentimos puede ser el comienzo de algo diferente.</p>
+        <a class="btn btn--arrow" href="#en-que-puedo-acompanarte">Quiero saber más</a>
+      </div>
+    </div>
+    <div class="hero__media">
+      <Picture
+        src={heroImg}
+        alt=""
+        formats={['avif', 'webp']}
+        fallbackFormat="webp"
+        widths={[640, 960, 1280, 1448]}
+        sizes="(max-width: 899px) 100vw, 64vw"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+  </section>
+
+  <section class="section areas" id="en-que-puedo-acompanarte" aria-labelledby="areas-title">
+    <div class="container">
+      <div class="areas__head">
+        <h2 id="areas-title" class="heading-rule">¿En qué puedo acompañarte?</h2>
+        <p class="areas__intro">Trabajo en tres áreas que muchas veces se entrecruzan.<br />Podés conocer cada una y acercarte a la que mejor represente aquello que hoy te trae a consulta.</p>
+      </div>
+      <div class="areas__grid">
+        {areas.map((area) => (
+          <article class="area">
+            <p class="area__num" aria-hidden="true">{area.num}</p>
+            <h3>{area.title}</h3>
+            <p>{area.text}</p>
+            <a class="link-arrow" href={area.href}>
+              Conocer más<span class="visually-hidden"> sobre {area.title.toLowerCase()}</span>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="manera-title">
+    <div class="container split">
+      <div class="split__aside">
+        <p class="eyebrow">Mi manera de trabajar</p>
+        <h2 id="manera-title">Cada persona llega a terapia con una historia diferente</h2>
+      </div>
+      <div class="reading text-flow">
+        <p>Para mí es importante conocer a la persona que tengo delante: su historia, sus vínculos, su contexto, el momento de vida que está atravesando y aquello que hoy la trae a consulta.</p>
+        <p class="destacado">Escucho, pero no me quedo callada.</p>
+        <p>Pregunto, intervengo y a veces propongo mirar aspectos que quizás nunca habían sido relacionados con lo que está sucediendo.</p>
+        <p>Muchas veces podemos explicar perfectamente una situación y, sin embargo, seguir sintiendo que no encontramos cómo avanzar o salir de ese lugar, como si todavía faltara una pieza para comprender qué hacer con eso.</p>
+        <p>Por eso también me interesa que la terapia sea un espacio donde podamos <strong>acercarnos a lo que sentimos, permitir que aparezca la emoción y poner en palabras aquello que no siempre resulta fácil expresar.</strong></p>
+        <p>No trabajo con respuestas prefabricadas ni creo que exista una única manera de hacer terapia.</p>
+        <p class="destacado">El proceso se construye entre la persona y su terapeuta.</p>
+        <p>Cada persona puede necesitar algo diferente: más escucha en algunos momentos, más contención en otros, una pregunta, una intervención más directa o simplemente tiempo para poder acercarse a algo que todavía cuesta mirar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="sobre-mi-title">
+    <div class="container about-teaser">
+      <div>
+        <p class="eyebrow">Sobre mí</p>
+        <h2 id="sobre-mi-title">Un recorrido de vida, formación y experiencia</h2>
+      </div>
+      <div class="reading">
+        <p>Llegué hasta acá después de muchos años de recorrido. <strong>Sin prisa, pero sin pausa</strong>, aprendiendo de los aciertos y también de los errores, con curiosidad y con las mismas ganas de seguir aprendiendo.</p>
+        <p class="destacado">Creo que una parte importante de vivir consiste en poder recalcular sin sentir que todo lo anterior fue un error.</p>
+        <a class="link-arrow" href="/sobre-mi/">Conocer más sobre mí</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><hr class="page-divider" /></div>
+
+  <section class="section section--tight" aria-labelledby="modalidad-title">
+    <div class="container modalidad">
+      <h2 id="modalidad-title">Modalidad de atención</h2>
+      <div>
+        <ul class="modalidad__tags">
+          <li>Online</li>
+          <li>Presencial</li>
+        </ul>
+        <p>Atención online y presencial, según disponibilidad.</p>
+        <p>Consultorios en <strong>{SITE.consultorios[0]}</strong> y <strong>{SITE.consultorios[1]}</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-label="Contacto">
+    <div class="container">
+      <ContactBlock id="contacto" eyebrow="Contacto" />
+    </div>
+  </section>
+</Base>

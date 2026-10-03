@@ -1,0 +1,182 @@
+---
+import { Picture } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import ServiceCta from '../components/ServiceCta.astro';
+import sillonImg from '../assets/img/sobre-mi-sillon.webp';
+import cuadernoImg from '../assets/img/sobre-mi-cuaderno.webp';
+import fotoSilvina from '../assets/img/silvina-lizarraga.webp';
+import marca from '../assets/marca-recalcular.svg?raw';
+
+// Recorrido profesional por etapas (texto de Silvina, documento v1.1).
+// `datos` se muestra siempre; `texto` queda desplegable en "Leer más".
+const etapas: { titulo: string; datos: string[]; texto?: string[]; cierre?: string[] }[] = [
+  {
+    titulo: 'Antes de la psicología',
+    datos: [
+      'Docente de escuela primaria',
+      'Orientación Familiar · Hospital de Vicente López',
+      'Institución residencial para personas adultas con discapacidad motora · aprox. cuatro años',
+    ],
+    texto: [
+      'Mi recorrido profesional comenzó antes de recibirme de psicóloga.',
+      'Durante varios años fui <strong>docente de escuela primaria</strong>, principalmente de primero, segundo y tercer grado. Esa primera experiencia con la infancia y las familias fue despertando en mí un interés cada vez mayor por comprender los vínculos y aquello que sucede detrás de las dificultades que aparecen en distintos momentos de la vida.',
+      'Más adelante realicé una formación en <strong>Orientación Familiar en el Hospital de Vicente López</strong>. A partir de allí trabajé durante aproximadamente cuatro años en una institución residencial para <strong>personas adultas con discapacidad motora</strong>.',
+      'Fue una experiencia muy significativa, que me acercó de manera directa a cuestiones relacionadas con la autonomía, la dependencia, los vínculos familiares, la adaptación y la calidad de vida, y amplió mi manera de mirar a la persona más allá de un diagnóstico o de una condición física.',
+    ],
+  },
+  {
+    titulo: 'Ya siendo psicóloga: niñez, familia y maternidad',
+    datos: [
+      'Licenciada en Psicología · Universidad de Buenos Aires',
+      'Posgrado en Niñez y Familia · Universidad de Buenos Aires',
+      'Psicología de Obstetricia, Hospital Materno Infantil de San Isidro · casi ocho años',
+    ],
+    texto: [
+      'Ya siendo psicóloga, realicé una formación de posgrado en <strong>Niñez y Familia en la Universidad de Buenos Aires</strong>.',
+      'Durante casi ocho años integré el equipo de Psicología de Obstetricia del <strong>Hospital Materno Infantil de San Isidro</strong>.',
+      'Allí acompañé a mujeres durante el embarazo y en situaciones de especial complejidad emocional: embarazos de riesgo, pérdidas gestacionales o perinatales, nacimientos prematuros y situaciones en las que los bebés presentaban dificultades físicas u orgánicas.',
+      'El trabajo se realizaba de manera interdisciplinaria con los equipos médicos. También participé junto a ginecólogas en espacios de orientación en <strong>salud sexual y reproductiva</strong> y en actividades de educación y prevención en escuelas.',
+      'Fue una etapa muy importante de mi recorrido, tanto por el acompañamiento de momentos vitales de enorme intensidad como por el aprendizaje del trabajo conjunto con profesionales de otras disciplinas.',
+    ],
+  },
+  {
+    titulo: 'Sexología Clínica — Hospital de Clínicas',
+    datos: [
+      'Equipo de Sexología del Dr. Juan Carlos Kustnezoff, Hospital de Clínicas José de San Martín · más de diez años',
+      'Posgrado en Sexología Clínica · UBA, Facultad de Medicina, Secretaría de Extensión Universitaria, Hospital de Clínicas',
+      'Docente colaboradora del posgrado',
+      'Sexóloga Clínica acreditada por la Asociación Internacional de Sexología Médica (AISM)',
+    ],
+    texto: [
+      'Posteriormente comenzó una etapa que ocuparía <strong>más de diez años</strong> de mi recorrido profesional en el <strong>Hospital de Clínicas José de San Martín</strong>, integrando el equipo de Sexología dirigido por el Dr. Juan Carlos Kustnezoff.',
+      'El consultorio de Sexología funcionaba dentro de la <strong>Unidad de Urología</strong> del hospital y recibía una demanda clínica muy amplia.',
+      'Mi trabajo incluía atención en consultorio junto al Dr. Kustnezoff y también atención individual de personas que consultaban por diferentes dificultades relacionadas con su sexualidad.',
+      'Esa experiencia fue central en mi formación como sexóloga clínica. Me permitió trabajar durante años con una gran diversidad de consultas y consolidar una mirada integral de la sexualidad, en la que los aspectos psicológicos, vinculares y médicos necesitan ser pensados en conjunto.',
+      'Realicé además la formación de posgrado en <strong>Sexología Clínica</strong> dirigida por el Dr. Kustnezoff y posteriormente participé como <strong>docente colaboradora</strong> en esa misma formación.',
+      'Durante varios años, la práctica clínica y la docencia transcurrieron así de manera paralela, en un espacio en el que aprender, enseñar y revisar la práctica formaban parte del mismo recorrido.',
+    ],
+  },
+  {
+    titulo: 'Terapia de pareja',
+    datos: [
+      'Dos formaciones en el CTC',
+      'Terapia Focalizada en las Emociones (TFE) · externship y dos módulos',
+    ],
+    texto: [
+      'A lo largo de mi recorrido profesional fui incorporando también formación específica en <strong>Terapia de Pareja</strong>, mientras este campo iba ocupando un lugar cada vez más importante en mi práctica privada.',
+      'Realicé dos formaciones en el <strong>CTC</strong> y posteriormente profundicé este trabajo con formación en <strong>Terapia Focalizada en las Emociones (TFE)</strong>, completando el <strong>externship</strong> y dos módulos de formación.',
+      'Esta mirada se fue integrando naturalmente con mi experiencia en psicología y sexología clínica, permitiéndome trabajar no solamente con lo que le sucede a cada persona, sino también con <strong>la dinámica que se construye en el vínculo</strong>: los ciclos que se repiten, las formas de acercarse y alejarse, la comunicación y las necesidades emocionales que muchas veces quedan por debajo del conflicto visible.',
+      'Hoy la psicoterapia individual, la terapia de pareja y la sexología clínica no son para mí compartimentos separados, sino distintas puertas de entrada para comprender a las personas y los vínculos en toda su complejidad.',
+    ],
+  },
+  {
+    titulo: 'Formación continua',
+    datos: [],
+    cierre: [
+      'La formación no terminó para mí con los títulos o los posgrados. Continúo participando en cursos, jornadas y congresos de actualización en psicoterapia, sexología y terapia de pareja.',
+    ],
+  },
+];
+---
+<Base
+  title="Sobre mí · Silvina Lizarraga"
+  description="Psicóloga (UBA) y Sexóloga Clínica acreditada por la AISM, con formación de posgrado en Sexología Clínica y en Niñez y Familia, y formación en Terapia de Pareja."
+>
+  <section class="about-hero">
+    <div class="container about-hero__inner">
+      <div class="about-hero__content fade-in">
+        <h1>Sobre mí</h1>
+        <p class="lead">Un recorrido de vida, formación y experiencia, con la misma curiosidad y ganas de seguir aprendiendo.</p>
+      </div>
+    </div>
+    <div class="about-hero__media">
+      <Picture
+        src={sillonImg}
+        alt=""
+        formats={['avif', 'webp']}
+        fallbackFormat="webp"
+        widths={[640, 900, 1122]}
+        sizes="(max-width: 899px) 100vw, 60vw"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+    <svg class="about-hero__wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M0 60 C 240 20, 420 18, 640 40 S 1080 96, 1440 30 L 1440 90 L 0 90 Z" />
+    </svg>
+  </section>
+
+  <section class="section" style="padding-top: clamp(40px, 5vw, 72px)">
+    <div class="container about-body">
+      <div class="reading text-flow">
+        <p>Llegué hasta acá después de muchos años de recorrido. Sin prisa, pero sin pausa, aprendiendo de los aciertos y también de los errores, con curiosidad y con las mismas ganas de seguir aprendiendo.</p>
+        <blockquote class="recalcular">
+          <p>Creo que una parte importante de vivir consiste en poder recalcular sin sentir que todo lo anterior fue un error.</p>
+        </blockquote>
+        <p>La vida cambia, nosotros cambiamos y también cambia aquello que necesitamos. Algunas cosas siguen representándonos y queremos conservarlas. Otras fueron valiosas en determinados momentos, pero quizás hoy ya no nos sirven de la misma manera. Recalcular es poder mirar dónde estamos ahora y preguntarnos qué queremos sostener, qué necesitamos revisar y hacia dónde queremos seguir.</p>
+        <p>Esa actitud también atraviesa mi recorrido profesional. Sigo estudiando, preguntándome y revisando mi manera de trabajar. Algunas convicciones se afianzan con los años; otras necesitan ser repensadas a partir de nuevas experiencias, nuevos conocimientos y de cada persona que llega a consulta.</p>
+        <p>No creo que haber vivido ciertas experiencias signifique saber lo que siente otra persona. Cada historia es única. Pero sí creo que los años, la formación y la experiencia fueron transformando mi manera de escuchar, de comprender y de acompañar.</p>
+        <p>Hoy mi trabajo reúne todo ese recorrido, sin perder algo que para mí sigue siendo esencial: <strong>la curiosidad por comprender a la persona que tengo delante y la disposición a seguir aprendiendo.</strong></p>
+      </div>
+      <div class="about-body__aside">
+        <Picture
+          src={cuadernoImg}
+          alt=""
+          formats={['avif', 'webp']}
+          fallbackFormat="webp"
+          widths={[420, 640, 900]}
+          sizes="(max-width: 899px) 100vw, 36vw"
+        />
+        <div class="marca" role="img" aria-label="Recalcular también es parte del camino." set:html={marca} />
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><hr class="page-divider" /></div>
+
+  <section class="section" aria-labelledby="trayectoria-title">
+    <div class="container split">
+      <div class="split__aside split__aside--retrato">
+        <p class="eyebrow">Formación y trayectoria</p>
+        <h2 id="trayectoria-title">Formación y trayectoria profesional</h2>
+        <Picture
+          class="retrato"
+          src={fotoSilvina}
+          alt="Silvina Lizarraga, psicóloga, sexóloga clínica y terapeuta de pareja"
+          formats={['avif', 'webp']}
+          fallbackFormat="webp"
+          widths={[320, 480, 680]}
+          sizes="(max-width: 899px) 280px, 340px"
+        />
+      </div>
+      <ol class="recorrido">
+        {etapas.map((etapa) => (
+          <li class="etapa">
+            <h3 class="etapa__titulo">{etapa.titulo}</h3>
+            {etapa.datos.length > 0 && (
+              <ul class="etapa__datos">
+                {etapa.datos.map((d) => <li>{d}</li>)}
+              </ul>
+            )}
+            {etapa.cierre && (
+              <div class="text-flow etapa__cierre">
+                {etapa.cierre.map((p) => <p>{p}</p>)}
+                <p class="destacado">Seguir estudiando, incorporar nuevas perspectivas y revisar lo aprendido forma parte de mi manera de ejercer la profesión.</p>
+              </div>
+            )}
+            {etapa.texto && (
+              <details class="etapa__mas">
+                <summary><span class="etapa__abrir">Leer más</span><span class="etapa__cerrar">Leer menos</span></summary>
+                <div class="text-flow reading">
+                  {etapa.texto.map((p) => <p set:html={p} />)}
+                </div>
+              </details>
+            )}
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <ServiceCta />
+</Base>

@@ -310,37 +310,57 @@ Hoy mi trabajo reúne todo ese recorrido, sin perder algo que para mí sigue sie
 
 ## Formación y trayectoria profesional
 
-**Licenciada en Psicología — Universidad de Buenos Aires**
+Mi recorrido profesional comenzó antes de recibirme de psicóloga.
 
-**Formación de posgrado en Sexología Clínica — Facultad de Medicina, Universidad de Buenos Aires**  
-> TODO: verificar denominación oficial exacta.
+Durante varios años fui **docente de escuela primaria**, principalmente de primero, segundo y tercer grado. Esa primera experiencia con la infancia y las familias fue despertando en mí un interés cada vez mayor por comprender los vínculos y aquello que sucede detrás de las dificultades que aparecen en distintos momentos de la vida.
 
-**Formación especializada en Terapia de Pareja**  
-> TODO: verificar institución y denominación oficial exacta.
+Más adelante realicé una formación en **Orientación Familiar en el Hospital de Vicente López**. A partir de allí trabajé durante aproximadamente cuatro años en una institución residencial para **personas adultas con discapacidad motora**.
 
-**Formación de posgrado en Familia — Universidad de Buenos Aires**  
-> TODO: verificar denominación oficial exacta.
+Fue una experiencia muy significativa, que me acercó de manera directa a cuestiones relacionadas con la autonomía, la dependencia, los vínculos familiares, la adaptación y la calidad de vida, y amplió mi manera de mirar a la persona más allá de un diagnóstico o de una condición física.
 
-### Experiencia clínica e interdisciplinaria
+### Ya siendo psicóloga: niñez, familia y maternidad
 
-Durante casi ocho años integré el equipo de Psicología de Obstetricia del Hospital Materno Infantil de San Isidro. Allí acompañé a mujeres durante el embarazo y en situaciones de especial vulnerabilidad, como embarazos de riesgo y pérdidas gestacionales o perinatales.
+Ya siendo psicóloga, realicé una formación de posgrado en **Niñez y Familia en la Universidad de Buenos Aires**.
 
-Ese trabajo me permitió desarrollar una experiencia muy profunda en el acompañamiento emocional en momentos de gran intensidad vital, y también en el trabajo conjunto con profesionales de otras disciplinas.
+Durante casi ocho años integré el equipo de Psicología de Obstetricia del **Hospital Materno Infantil de San Isidro**.
 
-En ese mismo marco participé en actividades de docencia y prevención en escuelas sobre salud sexual y reproductiva, y trabajé junto a ginecólogas en espacios de orientación y asesoramiento en esta área.
+Allí acompañé a mujeres durante el embarazo y en situaciones de especial complejidad emocional: embarazos de riesgo, pérdidas gestacionales o perinatales, nacimientos prematuros y situaciones en las que los bebés presentaban dificultades físicas u orgánicas.
 
-Además realicé una formación de posgrado en Familia en la Universidad de Buenos Aires, que fue sumando herramientas para comprender los vínculos, las transiciones familiares y las distintas etapas del ciclo vital.
+El trabajo se realizaba de manera interdisciplinaria con los equipos médicos. También participé junto a ginecólogas en espacios de orientación en **salud sexual y reproductiva** y en actividades de educación y prevención en escuelas.
 
-### Trayectoria en Sexología Clínica
+Fue una etapa muy importante de mi recorrido, tanto por el acompañamiento de momentos vitales de enorme intensidad como por el aprendizaje del trabajo conjunto con profesionales de otras disciplinas.
 
-> TODO: redactar con precisión a partir de la formación junto al Dr. Juan Carlos Kustnezoff, la experiencia vinculada al Hospital de Clínicas, la duración exacta y las denominaciones institucionales correctas.
+### Sexología Clínica — Hospital de Clínicas
 
-### Docencia y formación continua
+Posteriormente comenzó una etapa que ocuparía **más de diez años** de mi recorrido profesional en el **Hospital de Clínicas José de San Martín**, integrando el equipo de Sexología dirigido por el Dr. Juan Carlos Kustnezoff.
 
-> TODO: seleccionar solo aquello que actualmente representa su identidad profesional.
+El consultorio de Sexología funcionaba dentro de la **Unidad de Urología** del hospital y recibía una demanda clínica muy amplia.
 
----
+Mi trabajo incluía atención en consultorio junto al Dr. Kustnezoff y también atención individual de personas que consultaban por diferentes dificultades relacionadas con su sexualidad.
 
+Esa experiencia fue central en mi formación como sexóloga clínica. Me permitió trabajar durante años con una gran diversidad de consultas y consolidar una mirada integral de la sexualidad, en la que los aspectos psicológicos, vinculares y médicos necesitan ser pensados en conjunto.
+
+Realicé además la formación de posgrado en **Sexología Clínica** dirigida por el Dr. Kustnezoff y posteriormente participé como **docente colaboradora** en esa misma formación.
+
+Durante varios años, la práctica clínica y la docencia transcurrieron así de manera paralela, en un espacio en el que aprender, enseñar y revisar la práctica formaban parte del mismo recorrido.
+
+### Terapia de pareja
+
+A lo largo de mi recorrido profesional fui incorporando también formación específica en **Terapia de Pareja**, mientras este campo iba ocupando un lugar cada vez más importante en mi práctica privada.
+
+Realicé dos formaciones en el **CTC** y posteriormente profundicé este trabajo con formación en **Terapia Focalizada en las Emociones (TFE)**, completando el **externship** y dos módulos de formación.
+
+Esta mirada se fue integrando naturalmente con mi experiencia en psicología y sexología clínica, permitiéndome trabajar no solamente con lo que le sucede a cada persona, sino también con **la dinámica que se construye en el vínculo**: los ciclos que se repiten, las formas de acercarse y alejarse, la comunicación y las necesidades emocionales que muchas veces quedan por debajo del conflicto visible.
+
+Hoy la psicoterapia individual, la terapia de pareja y la sexología clínica no son para mí compartimentos separados, sino distintas puertas de entrada para comprender a las personas y los vínculos en toda su complejidad.
+
+### Formación continua
+
+La formación no terminó para mí con los títulos o los posgrados.
+
+Continúo participando en cursos, jornadas y congresos de actualización en psicoterapia, sexología y terapia de pareja.
+
+**Seguir estudiando, incorporar nuevas perspectivas y revisar lo aprendido forma parte de mi manera de ejercer la profesión.**
 # 8. MODALIDAD DE ATENCIÓN
 
 Atención **online y presencial**, según disponibilidad.
@@ -490,8 +510,8 @@ Página cálida y editorial con la frase sobre **recalcular** como eje, sin exce
 
 ---
 
-**Versión:** 1.0  
-**Fecha:** 28/09/2026  
+**Versión:** 1.1  
+**Fecha:** 30/09/2026  
 **Uso:** documento base para desarrollo e implementación técnica.
 
 

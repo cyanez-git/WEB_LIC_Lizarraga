@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeroImage from '../components/PageHeroImage.astro';
+import heroImg from '../assets/img/psicoterapia-hilo.webp';
+import ServiceCta from '../components/ServiceCta.astro';
+---
+<Base
+  title="Psicoterapia individual presencial y online · Silvina Lizarraga"
+  description="Psicoterapia individual presencial y online. Un espacio para comprender lo que estás viviendo y acercarte a aquello que sentís. No hace falta llegar con todo claro."
+  keywords={['psicóloga', 'psicóloga online', 'psicoterapia', 'terapia online en español', 'ansiedad', 'angustia']}
+>
+  <section class="page-hero page-hero--media">
+    <div class="container">
+      <div>
+        <h1><span class="eyebrow">Psicoterapia individual</span>Hay momentos en los que algo de nuestra vida necesita ser mirado de otra manera</h1>
+        <div class="reading text-flow">
+          <p class="lead">A veces sabemos claramente qué nos está pasando. Otras, simplemente sentimos que algo no está bien.</p>
+          <p>Puede aparecer como angustia, ansiedad, tristeza, enojo, dificultades en nuestros vínculos, una situación que se repite, una decisión que no podemos tomar o la sensación de estar atravesando un momento de nuestra vida para el que las herramientas que siempre nos sirvieron ya no alcanzan.</p>
+          <p class="destacado">También puede ocurrir que podamos explicar perfectamente por qué nos pasa algo y, sin embargo, comprenderlo no sea suficiente para cambiar cómo nos sentimos.</p>
+          <p>La terapia puede ofrecer un espacio para detenernos en eso que está sucediendo, ponerlo en palabras y también permitirnos entrar en contacto con emociones que muchas veces intentamos controlar, evitar o explicar antes de poder sentirlas.</p>
+        </div>
+      </div>
+      <PageHeroImage src={heroImg} encuadre="50% 22%" />
+    </div>
+  </section>
+
+  <section class="section band section--alt">
+    <div class="container">
+      <div class="split">
+        <div class="split__aside"><h2>No hace falta llegar con todo claro</h2></div>
+        <div class="reading text-flow">
+          <p>Muchas personas comienzan terapia sin saber exactamente qué necesitan o incluso sin poder explicar demasiado bien qué les está pasando.</p>
+          <p>A veces hay un acontecimiento concreto. Otras veces es un malestar que se fue instalando de a poco.</p>
+          <p><strong>No hace falta tener un diagnóstico ni saber de antemano qué deberías trabajar en terapia.</strong></p>
+          <p>Eso también lo iremos descubriendo en el proceso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="container">
+      <div class="split">
+        <div class="split__aside"><h2>Los momentos de la vida también nos atraviesan</h2></div>
+        <div class="reading text-flow">
+          <p>A lo largo de la vida atravesamos cambios, pérdidas, decisiones y crisis que nos obligan a reacomodarnos.</p>
+          <p>Algunas forman parte del propio transcurrir vital y no necesariamente implican una patología.</p>
+          <p>Poder acompañarlas también requiere comprender el momento de vida de la persona y aquello que ese momento pone en juego.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ServiceCta />
+</Base>

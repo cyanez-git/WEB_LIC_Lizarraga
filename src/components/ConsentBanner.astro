@@ -1,0 +1,33 @@
+---
+// Aviso de cookies: aparece solo hasta que la persona elige. Se puede volver a
+// abrir desde "Preferencias de cookies" en el pie de página.
+---
+<div class="consent" id="consent" role="region" aria-label="Aviso de cookies" hidden>
+  <p>Uso cookies de medición para saber cómo se usa este sitio y mejorarlo. No se usan con fines publicitarios. <a class="text-link" href="/privacidad/">Política de privacidad</a></p>
+  <div class="consent__acciones">
+    <button class="btn consent__btn" type="button" data-consent="aceptado">Aceptar</button>
+    <button class="consent__rechazar" type="button" data-consent="rechazado">Rechazar</button>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var box = document.getElementById('consent');
+    if (!box) return;
+    var KEY = 'consentimiento-cookies';
+    var guardada = null;
+    try { guardada = localStorage.getItem(KEY); } catch (e) {}
+    if (!guardada) box.hidden = false;
+    box.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-consent]');
+      if (!b) return;
+      var v = b.getAttribute('data-consent');
+      try { localStorage.setItem(KEY, v); } catch (e2) {}
+      if (window.gtag) gtag('consent', 'update', { analytics_storage: v === 'aceptado' ? 'granted' : 'denied' });
+      box.hidden = true;
+    });
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('[data-consent-abrir]')) { e.preventDefault(); box.hidden = false; }
+    });
+  })();
+</script>
