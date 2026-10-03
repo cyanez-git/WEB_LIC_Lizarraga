@@ -16,7 +16,7 @@ export const GET: APIRoute = () => {
 > ${SITE.tagline.replaceAll(' · ', ', ')}. Licenciada en Psicología (Universidad de Buenos Aires), ${SITE.matriculas.join(' · ')}. Sexóloga Clínica acreditada por la Asociación Internacional de Sexología Médica (AISM). Atención presencial en ${SITE.consultorios.join(' y ').replaceAll(' ', ' ')} (Buenos Aires, Argentina) y online en español.
 
 Contacto: WhatsApp ${SITE.whatsappDisplay} (${WHATSAPP_URL}). Instagram: @lic.silvinalizarraga.
-Modalidad: online y presencial, según disponibilidad. En terapia sexual, las entrevistas pueden ser individuales o en pareja.
+Modalidad: online y presencial, según disponibilidad.
 
 ## Áreas de atención
 

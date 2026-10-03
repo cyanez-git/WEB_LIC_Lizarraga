@@ -263,7 +263,7 @@ a { color: inherit; }
 /* ---------- Áreas (Home) ---------- */
 .areas { padding-top: clamp(56px, 5vw, 88px); }
 .areas__head { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 24px 64px; margin-bottom: clamp(48px, 5vw, 72px); }
-.areas__intro { max-width: 22rem; font-size: var(--fs-small); color: var(--muted); line-height: 1.55; margin: 0; }
+.areas__intro { max-width: 26rem; font-size: var(--fs-small); color: var(--muted); line-height: 1.55; margin: 0; }
 .areas__grid { display: grid; grid-template-columns: repeat(3, 1fr); }
 .area { display: flex; flex-direction: column; padding-inline: clamp(24px, 3.2vw, 48px); }
 .area:first-child { padding-left: 0; }
